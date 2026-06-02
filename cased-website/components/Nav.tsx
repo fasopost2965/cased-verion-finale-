@@ -10,7 +10,9 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const knownRoutes = ['/', '/expertise', '/approche', '/a-propos', '/consultation', '/siieres-2026', '/mentions-legales'];
   const isSiieres = pathname === '/siieres-2026';
+  const is404 = !knownRoutes.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,7 +30,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className={`nav${scrolled ? ' scrolled' : ''}${isSiieres ? ' nav-dark' : ''}`} id="nav">
+      <header className={`nav${scrolled ? ' scrolled' : ''}${isSiieres || is404 ? ' nav-dark' : ''}`} id="nav">
         <div className="wrap nav-inner">
           <Link href="/" className="nav-brand">
             <Image className="nav-logo" src="/logo_cased.png" alt="Logo CASED" width={64} height={64} style={{ height: 64, width: 'auto' }} />

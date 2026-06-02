@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function MentionsLegalesPage() {
   const [activeSection, setActiveSection] = useState('editeur');
@@ -34,12 +33,6 @@ export default function MentionsLegalesPage() {
   return (
     <>
       <style>{`
-        .ml-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;background:rgba(248,249,250,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-        .ml-nav-inner{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,80px);display:flex;align-items:center;justify-content:space-between;height:100%}
-        .ml-nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-        .ml-nav-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.04em}
-        .ml-nav-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;text-decoration:none}
-        .ml-nav-back:hover{color:var(--navy)}
         .ml-page-wrap{padding-top:76px;display:grid;grid-template-columns:240px 1fr;gap:48px;max-width:1100px;margin:0 auto;padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px);padding-bottom:80px}
         .ml-toc{padding-top:48px;position:sticky;top:96px;align-self:start}
         .ml-toc-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
@@ -67,23 +60,8 @@ export default function MentionsLegalesPage() {
         .info-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px}
         .info-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:6px}
         .info-value{font-size:15px;font-weight:600;color:var(--navy)}
-        .ml-footer{background:var(--navy);padding:40px 0;margin-top:64px}
-        .ml-footer-inner{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,80px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
         @media(max-width:768px){.ml-page-wrap{grid-template-columns:1fr;padding-top:76px}.ml-toc{display:none}.info-grid{grid-template-columns:1fr}}
       `}</style>
-
-      <header className="ml-nav">
-        <div className="ml-nav-inner">
-          <Link href="/" className="ml-nav-brand">
-            <Image src="/logo_cased.png" alt="Logo CASED" width={56} height={56} style={{ height: 56, width: 'auto', objectFit: 'contain' }} />
-            <span className="ml-nav-name">CASED</span>
-          </Link>
-          <Link className="ml-nav-back" href="/">
-            <span className="ms" style={{ fontSize: 18 }}>arrow_back</span>
-            Retour à l&apos;accueil
-          </Link>
-        </div>
-      </header>
 
       <div className="ml-page-wrap">
         <aside className="ml-toc">
@@ -240,12 +218,6 @@ export default function MentionsLegalesPage() {
         </main>
       </div>
 
-      <footer className="ml-footer">
-        <div className="ml-footer-inner">
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,.35)' }}>© 2026 CASED — Cabinet Africain de Stratégie &amp; d&apos;Expertise pour le Développement. Tous droits réservés.</p>
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.2)' }}>Design by <a href="tel:+212777346787" style={{ color: 'rgba(255,255,255,.35)' }}>FASOPOT DIGITAL</a> — +212 777 346 787</div>
-        </div>
-      </footer>
     </>
   );
 }
