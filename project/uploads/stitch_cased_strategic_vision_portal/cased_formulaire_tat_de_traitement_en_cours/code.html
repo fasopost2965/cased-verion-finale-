@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "ink-black": "#0F172A",
+                    "surface-container-high": "#e7e8e9",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "outline": "#75777f",
+                    "on-tertiary-container": "#b18d48",
+                    "on-surface-variant": "#44474e",
+                    "on-primary-fixed": "#081b3a",
+                    "on-background": "#191c1d",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary": "#ffffff",
+                    "growth-green": "#2D5A27",
+                    "on-secondary-fixed": "#002201",
+                    "institutional-navy": "#1A2B4B",
+                    "surface-variant": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#b9eeab",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-fixed": "#261900",
+                    "primary-container": "#1a2b4b",
+                    "tertiary": "#211500",
+                    "background": "#f8f9fa",
+                    "on-primary-fixed-variant": "#364768",
+                    "outline-variant": "#c5c6cf",
+                    "secondary-fixed-dim": "#a1d494",
+                    "on-secondary-fixed-variant": "#23501e",
+                    "secondary": "#3b6934",
+                    "primary": "#031635",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#4e5e81",
+                    "primary-fixed-dim": "#b6c6ef",
+                    "secondary-fixed": "#bcf0ae",
+                    "inverse-primary": "#b6c6ef",
+                    "surface": "#f8f9fa",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "tertiary-fixed": "#ffdea5",
+                    "on-secondary-container": "#3f6d38",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary-container": "#3a2800",
+                    "on-surface": "#191c1d",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d9dadb",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#8293b8",
+                    "pure-white": "#FFFFFF",
+                    "sovereign-gold": "#C5A059",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-gap-mobile": "64px",
+                    "section-gap-desktop": "120px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-gold {
+            animation: spin 1s linear infinite;
+        }
+        .form-overlay-active {
+            pointer-events: none;
+            opacity: 0.6;
+            filter: grayscale(0.5);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant/30 bg-surface/80 shadow-sm h-20 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+<div class="font-headline-sm text-headline-sm font-bold text-institutional-navy">CASED</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-institutional-navy hover:text-sovereign-gold transition-colors font-body-md text-body-md" href="#">Expertise</a>
+<a class="text-institutional-navy hover:text-sovereign-gold transition-colors font-body-md text-body-md" href="#">Approche</a>
+<a class="text-institutional-navy hover:text-sovereign-gold transition-colors font-body-md text-body-md" href="#">À Propos</a>
+<a class="text-sovereign-gold font-bold border-b-2 border-sovereign-gold pb-1 font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<button class="bg-sovereign-gold text-pure-white px-6 py-2 rounded-lg font-bold hover:opacity-80 transition-opacity">
+                Consultation
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Context -->
+<section class="py-section-gap-desktop bg-institutional-navy text-pure-white relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+<span class="font-label-caps text-label-caps text-sovereign-gold uppercase tracking-widest mb-4 block">Demande d'expertise</span>
+<h1 class="font-display-lg text-display-lg mb-6 max-w-3xl mx-auto">Propulsez votre Vision Institutionnelle</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto">Nos consultants experts analysent vos besoins pour élaborer des stratégies de souveraineté sur-mesure.</p>
+</div>
+<!-- Subtle background texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:40px_40px]"></div>
+</div>
+</section>
+<!-- Form Section with Processing State -->
+<section class="py-section-gap-desktop bg-surface relative">
+<div class="max-w-[800px] mx-auto px-gutter">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm border border-outline-variant/30">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="consultationForm">
+<!-- Form Fields with 'form-overlay-active' simulated via class -->
+<div class="flex flex-col gap-2 form-overlay-active">
+<label class="font-label-caps text-label-caps text-institutional-navy">NOM COMPLET</label>
+<input class="bg-surface-container-low border border-outline-variant px-4 py-3 rounded outline-none focus:border-2 focus:border-sovereign-gold" disabled="" type="text" value="Jean Dupont"/>
+</div>
+<div class="flex flex-col gap-2 form-overlay-active">
+<label class="font-label-caps text-label-caps text-institutional-navy">ORGANISATION</label>
+<input class="bg-surface-container-low border border-outline-variant px-4 py-3 rounded outline-none focus:border-2 focus:border-sovereign-gold" disabled="" type="text" value="Ministère du Plan"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2 form-overlay-active">
+<label class="font-label-caps text-label-caps text-institutional-navy">EMAIL PROFESSIONNEL</label>
+<input class="bg-surface-container-low border border-outline-variant px-4 py-3 rounded outline-none focus:border-2 focus:border-sovereign-gold" disabled="" type="email" value="j.dupont@institution.gov"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2 form-overlay-active">
+<label class="font-label-caps text-label-caps text-institutional-navy">VOTRE PROJET</label>
+<textarea class="bg-surface-container-low border border-outline-variant px-4 py-3 rounded outline-none focus:border-2 focus:border-sovereign-gold resize-none" disabled="" rows="4">Demande d'accompagnement stratégique pour le développement d'infrastructures énergétiques durables dans la région du Sahel.</textarea>
+</div>
+<!-- Processing Button -->
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-sovereign-gold text-pure-white py-4 rounded-lg font-bold flex items-center justify-center gap-3 cursor-wait shadow-md" disabled="" type="button">
+<span class="material-symbols-outlined animate-spin-gold" data-icon="progress_activity">progress_activity</span>
+<span class="font-headline-sm text-headline-sm text-[20px]">Traitement en cours...</span>
+</button>
+</div>
+<!-- Legal Badge Context -->
+<div class="md:col-span-2 flex justify-center mt-6">
+<div class="bg-surface-container-high px-4 py-1 rounded text-institutional-navy font-label-caps text-label-caps flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+                                RCCM: BJ-COO-01-2024-B13-00042 | IFU: 3202415487901
+                            </div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Bento Grid Context (Subtle background info) -->
+<section class="py-section-gap-desktop bg-surface-container-low border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-4">Pourquoi CASED ?</h2>
+<div class="w-20 h-1 bg-sovereign-gold mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-40 grayscale pointer-events-none">
+<!-- Expertise Card 1 -->
+<div class="bg-pure-white p-8 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-institutional-navy mb-4" data-icon="gavel">gavel</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Réforme Juridique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Structuration de cadres législatifs alignés sur les standards internationaux.</p>
+</div>
+<!-- Expertise Card 2 -->
+<div class="bg-pure-white p-8 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-institutional-navy mb-4" data-icon="insights">insights</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Analyse Macro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Modélisation économique pour des décisions souveraines éclairées.</p>
+</div>
+<!-- Expertise Card 3 -->
+<div class="bg-pure-white p-8 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-institutional-navy mb-4" data-icon="public">public</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Géopolitique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Positionnement stratégique sur l'échiquier continental.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-institutional-navy dark:bg-black w-full border-t border-outline/20">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap-desktop flex flex-col gap-unit">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+<div class="font-headline-sm text-headline-sm font-bold text-sovereign-gold">CASED</div>
+<div class="grid grid-cols-2 md:flex gap-x-12 gap-y-4">
+<a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Expertise</a>
+<a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Approche</a>
+<a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">À Propos</a>
+<a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-surface-variant/60">© 2024 CASED - Cabinet Africain de Stratégie &amp; Expertise pour le Développement. Tous droits réservés.</p>
+<div class="flex gap-6">
+<a class="text-surface-variant/60 hover:text-pure-white text-[14px]" href="#">Mentions Légales</a>
+<a class="text-surface-variant/60 hover:text-pure-white text-[14px]" href="#">Confidentialité</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Automatic redirection after simulation
+        window.addEventListener('load', () => {
+            console.log('Traitement de la demande en cours...');
+            // In a real scenario, we would wait for a fetch response here.
+            // This is just a UI demonstration of the loading state.
+        });
+
+        // Hover effect for TopNavBar items (manual implementation for active link logic)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                if (!link.classList.contains('text-sovereign-gold')) {
+                    link.style.opacity = '0.7';
+                }
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.opacity = '1';
+            });
+        });
+    </script>
+</body></html>

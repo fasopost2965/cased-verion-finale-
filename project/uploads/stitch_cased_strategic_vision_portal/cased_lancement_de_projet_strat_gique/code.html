@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "pure-white": "#FFFFFF",
+                    "inverse-primary": "#b6c6ef",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container": "#edeeef",
+                    "primary": "#031635",
+                    "tertiary": "#211500",
+                    "surface-tint": "#4e5e81",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-container": "#8293b8",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2e3132",
+                    "on-surface-variant": "#44474e",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-background": "#191c1d",
+                    "tertiary-container": "#3a2800",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary-fixed-variant": "#23501e",
+                    "on-primary": "#ffffff",
+                    "outline": "#75777f",
+                    "error-container": "#ffdad6",
+                    "secondary": "#3b6934",
+                    "growth-green": "#2D5A27",
+                    "surface-dim": "#d9dadb",
+                    "on-tertiary-container": "#b18d48",
+                    "surface": "#f8f9fa",
+                    "on-primary-fixed-variant": "#364768",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "outline-variant": "#c5c6cf",
+                    "on-surface": "#191c1d",
+                    "on-secondary": "#ffffff",
+                    "sovereign-gold": "#C5A059",
+                    "background": "#f8f9fa",
+                    "secondary-fixed-dim": "#a1d494",
+                    "institutional-navy": "#1A2B4B",
+                    "tertiary-fixed": "#ffdea5",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed": "#bcf0ae",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#b9eeab",
+                    "on-secondary-container": "#3f6d38",
+                    "on-secondary-fixed": "#002201",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "on-primary-fixed": "#081b3a",
+                    "surface-bright": "#f8f9fa",
+                    "primary-fixed-dim": "#b6c6ef",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#1a2b4b",
+                    "ink-black": "#0F172A",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-gap-mobile": "64px",
+                    "section-gap-desktop": "120px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            border-color: #2D5A27; /* Growth Green */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        .geometric-bg {
+            background-image: radial-gradient(#C5A059 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold text-institutional-navy dark:text-pure-white tracking-tighter">
+                CASED
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-institutional-navy dark:hover:text-pure-white transition-colors font-headline-sm text-headline-sm font-bold" href="#">Expertise</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-institutional-navy dark:hover:text-pure-white transition-colors font-headline-sm text-headline-sm font-bold" href="#">Méthodologie</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-institutional-navy dark:hover:text-pure-white transition-colors font-headline-sm text-headline-sm font-bold" href="#">Réalisations</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-institutional-navy dark:hover:text-pure-white transition-colors font-headline-sm text-headline-sm font-bold" href="#">Souveraineté</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-sovereign-gold text-pure-white px-6 py-2.5 rounded-lg font-bold hover:opacity-80 transition-all duration-300 active:scale-95">
+                    Contact
+                </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-white pt-section-gap-desktop pb-section-gap-desktop">
+<div class="absolute inset-0 geometric-bg pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full w-fit">
+<span class="material-symbols-outlined text-growth-green text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-caps text-label-caps text-institutional-navy uppercase tracking-wider">Directives de Confidentialité</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-institutional-navy max-w-xl">
+                            Lancez Votre Projet Stratégique
+                        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                            Engagez l’expertise souveraine pour transformer vos défis en leviers de croissance durable. Une approche méthodologique rigoureuse au service de l'ambition nationale.
+                        </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="bg-sovereign-gold text-pure-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all duration-300 shadow-lg shadow-sovereign-gold/20 active:scale-95">
+                                Compléter le Brief Projet
+                            </button>
+<button class="border-2 border-institutional-navy text-institutional-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-institutional-navy hover:text-white transition-all duration-300 active:scale-95">
+                                Consulter nos Réalisations
+                            </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional high-contrast photograph of a modern management consulting boardroom in a major African capital. Large floor-to-ceiling windows reveal a blurred skyline with modern architecture. The interior features a sleek glass conference table, minimalist leather chairs, and architectural lighting that creates a serious, institutional atmosphere. The color palette is dominated by deep blues and subtle gold accents from the afternoon sun, reflecting an aesthetic of sovereign strategic power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK6a9AGpP2fm5Gi35QiBaA-ghQEqhwxX2SDUfq_VQfZMEfMMPkGYsmqB-JXki8h60tyCOtasyUJ7ELrPNH6wxGWHIkFD6i9iWXgZcPk4KS_skpk2Ql4NiVf4UG392ukqsbsW4U0oKd--Xz-CZ7ydQkGgfJx1_Hnq0Q04eh2WK5mVvFzkEGoNl2Qb4yc1PLyKkyluONZD4HYLhmAsgfg9A15W7SAmcJmaeFtuuS7LkSzh1bm4IamkFR34uyRABbkWtGiwmgPCf7DbH6"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-pure-white p-6 rounded-xl shadow-xl border border-outline-variant/30 hidden md:block">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-growth-green">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div>
+<div class="font-bold text-institutional-navy">Données Sécurisées</div>
+<div class="text-sm text-on-surface-variant">Protocole de Souveraineté Numérique</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Journey Section -->
+<section class="bg-surface py-section-gap-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-4">Votre Parcours avec CASED</h2>
+<div class="h-1 w-20 bg-sovereign-gold mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bento-card bg-pure-white p-8 rounded-xl border border-outline-variant/30 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-surface-container opacity-50 rounded-full"></div>
+<div class="w-14 h-14 rounded-lg bg-institutional-navy flex items-center justify-center text-sovereign-gold relative z-10">
+<span class="material-symbols-outlined text-[32px]">analytics</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-sovereign-gold block mb-2">ÉTAPE 01</span>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Diagnostic de Souveraineté</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                Analyse approfondie des écarts stratégiques et identification des vulnérabilités institutionnelles pour définir un socle solide.
+                            </p>
+</div>
+<ul class="mt-auto space-y-3 pt-6 border-t border-outline-variant/20">
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Audit multisectoriel
+                            </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Cartographie des risques
+                            </li>
+</ul>
+</div>
+<!-- Step 2 -->
+<div class="bento-card bg-pure-white p-8 rounded-xl border border-outline-variant/30 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-surface-container opacity-50 rounded-full"></div>
+<div class="w-14 h-14 rounded-lg bg-institutional-navy flex items-center justify-center text-sovereign-gold relative z-10">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-sovereign-gold block mb-2">ÉTAPE 02</span>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Architecture Stratégique</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                Conception de solutions endogènes sur mesure, alignées sur les réalités juridiques et les ambitions de croissance du pays.
+                            </p>
+</div>
+<ul class="mt-auto space-y-3 pt-6 border-t border-outline-variant/20">
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Plan directeur tactique
+                            </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Cadre légal optimisé
+                            </li>
+</ul>
+</div>
+<!-- Step 3 -->
+<div class="bento-card bg-pure-white p-8 rounded-xl border border-outline-variant/30 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-surface-container opacity-50 rounded-full"></div>
+<div class="w-14 h-14 rounded-lg bg-institutional-navy flex items-center justify-center text-sovereign-gold relative z-10">
+<span class="material-symbols-outlined text-[32px]">insights</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-sovereign-gold block mb-2">ÉTAPE 03</span>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Exécution &amp; Impact</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                Mise en œuvre technique, déploiement opérationnel et monitoring rigoureux des indicateurs de performance souveraine.
+                            </p>
+</div>
+<ul class="mt-auto space-y-3 pt-6 border-t border-outline-variant/20">
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Suivi de performance
+                            </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[18px]">check_circle</span>
+                                Transfert de compétences
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Security Section -->
+<section class="py-section-gap-desktop bg-institutional-navy text-pure-white relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12 p-12 bg-primary-container rounded-3xl border border-outline/20">
+<div class="md:w-1/2">
+<div class="inline-block mb-6 px-4 py-1 border border-sovereign-gold/40 rounded-full">
+<span class="font-label-caps text-label-caps text-sovereign-gold uppercase tracking-widest">Souveraineté des Données</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">Confidentialité Institutionnelle Garantie</h2>
+<p class="text-surface-variant/80 font-body-lg text-body-lg mb-8">
+                            Chaque interaction au sein de CASED est protégée par des protocoles de sécurité de niveau étatique. Vos briefs projets sont traités dans un environnement isolé et souverain.
+                        </p>
+<div class="flex gap-4">
+<div class="bg-surface/10 px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="font-label-caps text-label-caps">RCCM: RB/ABC/24 B 1234</span>
+</div>
+<div class="bg-surface/10 px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="font-label-caps text-label-caps">IFU: 3202412345678</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col gap-6">
+<div class="p-6 bg-white/5 rounded-xl border border-white/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-sovereign-gold">lock_person</span>
+<div>
+<h4 class="font-bold mb-1">Anonymisation Totale</h4>
+<p class="text-sm text-surface-variant/70">Les données sensibles sont cryptées dès l'initiation du brief.</p>
+</div>
+</div>
+<div class="p-6 bg-white/5 rounded-xl border border-white/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-sovereign-gold">verified</span>
+<div>
+<h4 class="font-bold mb-1">Accréditation ISO</h4>
+<p class="text-sm text-surface-variant/70">Processus certifiés conformes aux standards internationaux.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-ink-black text-pure-white full-width border-t border-outline/20">
+<div class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="font-headline-sm text-headline-sm font-bold text-sovereign-gold">CASED</div>
+<p class="text-surface-variant/70 text-center md:text-left max-w-xs">
+                    Laboratoire d'Idées Souveraines au service de l'excellence stratégique.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-surface-variant/70 hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Mentions Légales</a>
+<a class="text-surface-variant/70 hover:text-pure-white transition-colors font-body-md text-body-md uppercase text-xs tracking-tighter" href="#">RCCM: RB/ABC/24 B 1234</a>
+<a class="text-surface-variant/70 hover:text-pure-white transition-colors font-body-md text-body-md uppercase text-xs tracking-tighter" href="#">IFU: 3202412345678</a>
+</div>
+</div>
+<div class="text-surface-variant/70 font-body-md text-body-md text-center md:text-right">
+                © 2024 CASED. Laboratoire d'Idées Souveraines. Tous droits réservés.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'scale(1.02)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Intersection Observer for bento grid animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

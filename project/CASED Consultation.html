@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Demande de consultation stratégique CASED — Initiez votre brief projet. Réponse garantie sous 24h ouvrables. Confidentialité de niveau étatique.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultation Stratégique | CASED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+:root{--navy:#1A2B4B;--navy-deep:#0C1828;--accent:#009A44;--accent-dk:#007A35;--green:#2D5A27;--white:#FFFFFF;--surface:#F8F9FA;--surface2:#EFF1F5;--border:#DDE1EC;--text:#191C1D;--muted:#44474E;--dim:#8B8FA8;--font:'Inter',system-ui,sans-serif;--maxw:1280px;--px:clamp(20px,5vw,80px);--sy:clamp(64px,9vw,112px);--gap:24px;--r:4px;--r-md:8px;--r-lg:12px;--r-xl:20px;--sh-sm:0 1px 4px rgba(0,0,0,.06);--sh-lg:0 20px 48px rgba(0,0,0,.12),0 8px 16px rgba(0,0,0,.06)}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none !important;opacity:1 !important;transform:none !important}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.6;color:var(--text);background:var(--surface);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+button{font-family:var(--font);cursor:pointer;border:none;background:none} ul{list-style:none}
+.ms{font-family:'Material Symbols Outlined';font-style:normal;font-size:22px;line-height:1;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+.ms-fill{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--px);padding-right:var(--px)}
+.section-y{padding-top:var(--sy);padding-bottom:var(--sy)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--r);transition:all .2s ease}
+.btn-primary{background:var(--accent);color:var(--white)}.btn-primary:hover{background:var(--accent-dk);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,154,68,.35)}
+.btn-outline{border:1.5px solid var(--navy);color:var(--navy)}.btn-outline:hover{background:var(--navy);color:var(--white)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.25);color:var(--white)}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:16px 36px;font-size:16px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.reveal.v{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;background:rgba(248,249,250,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--sh-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-logo{height:64px;width:auto;object-fit:contain}
+.nav-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.04em}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;position:relative;padding-bottom:2px}
+.nav-link:hover{color:var(--navy)}.nav-link.active{color:var(--navy);font-weight:600}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--accent);border-radius:2px}
+.nav-cta{background:var(--accent);color:var(--white);padding:10px 22px;font-size:14px;font-weight:600;border-radius:var(--r);transition:all .2s}
+.nav-cta:hover{background:var(--accent-dk);transform:translateY(-1px)}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.nav-ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:300;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.mobile-drawer{position:relative;z-index:1;background:var(--white);width:300px;height:100%;padding:24px;margin-left:auto;display:flex;flex-direction:column;gap:8px;overflow-y:auto}
+.mobile-close{align-self:flex-end;padding:8px;color:var(--muted);font-size:20px;cursor:pointer;background:none;border:none;font-family:var(--font)}
+.mobile-link{display:block;padding:14px 0;font-size:16px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--border)}
+
+/* PAGE HERO */
+.page-hero{padding-top:76px;background:var(--navy-deep);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(0,154,68,.2) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.hero-label{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(0,154,68,.18);color:#7FCF9A;border:1px solid rgba(0,154,68,.25);margin-bottom:20px}
+.hero-h1{font-size:clamp(32px,4.2vw,52px);font-weight:800;color:var(--white);letter-spacing:-.035em;line-height:1.1;margin-bottom:20px}
+.hero-h1 .acc{color:var(--accent)}
+.hero-desc{font-size:17px;line-height:1.72;color:rgba(255,255,255,.6);margin-bottom:32px}
+.hero-trust{display:flex;flex-direction:column;gap:12px}
+.htrust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.65)}
+.htrust-item .ms{font-size:18px;color:var(--accent)}
+
+/* RIGHT CONTACT CARD */
+.hero-contact-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:36px}
+.hcc-title{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:20px}
+.hcc-items{display:flex;flex-direction:column;gap:18px}
+.hcc-item{display:flex;align-items:flex-start;gap:14px}
+.hcc-icon{width:40px;height:40px;border-radius:var(--r-md);background:rgba(0,154,68,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hcc-icon .ms{font-size:20px;color:var(--accent)}
+.hcc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:4px}
+.hcc-value{font-size:15px;color:rgba(255,255,255,.8);font-weight:500;line-height:1.4}
+.hcc-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
+.response-badge{display:flex;align-items:center;gap:10px;margin-top:20px;padding:14px;background:rgba(0,154,68,.12);border:1px solid rgba(0,154,68,.2);border-radius:var(--r-md)}
+.response-badge .ms{color:var(--accent);font-size:18px}
+.response-badge span{font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+
+/* FORM SECTION */
+.form-section{background:var(--white);padding:var(--sy) 0}
+.form-section-inner{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start}
+.form-sidebar{}
+.sidebar-h{font-size:22px;font-weight:700;color:var(--navy);letter-spacing:-.025em;margin-bottom:12px}
+.sidebar-desc{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:32px}
+.sidebar-features{display:flex;flex-direction:column;gap:14px}
+.sf-item{display:flex;align-items:flex-start;gap:12px}
+.sf-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:7px}
+.sf-text{font-size:14px;color:var(--muted);line-height:1.6}
+.sf-text strong{color:var(--navy);font-weight:600}
+.sidebar-legal{margin-top:32px;padding:20px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-lg)}
+.sl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:10px}
+.sl-badges{display:flex;flex-direction:column;gap:6px}
+.sl-badge{font-size:11px;color:var(--muted);font-weight:500}
+
+/* FORM */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:48px}
+.form-title{font-size:22px;font-weight:700;color:var(--navy);letter-spacing:-.025em;margin-bottom:6px}
+.form-subtitle{font-size:15px;color:var(--muted);margin-bottom:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{margin-bottom:16px}
+.flabel{display:block;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;margin-bottom:7px}
+.freq{color:var(--accent);margin-left:2px}
+.finput{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--font);font-size:15px;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none}
+.finput:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,154,68,.1)}
+.finput::placeholder{color:var(--dim)}
+textarea.finput{resize:vertical;min-height:120px;line-height:1.6}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:20px}
+.checkbox-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:3px;accent-color:var(--accent);cursor:pointer}
+.checkbox-row label{font-size:13px;color:var(--muted);cursor:pointer;line-height:1.55}
+.checkbox-row label a{color:var(--accent);text-decoration:underline}
+.fsubmit{width:100%;padding:16px;background:var(--accent);color:var(--white);border-radius:var(--r);font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;border:none;display:flex;align-items:center;justify-content:center;gap:8px}
+.fsubmit:hover{background:var(--accent-dk);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,154,68,.35)}
+.fsubmit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-footer-note{font-size:12px;color:var(--dim);text-align:center;margin-top:14px}
+.form-footer-note .acc{color:var(--accent)}
+
+/* SUCCESS STATE */
+.success-state{display:none;text-align:center;padding:48px 24px}
+.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(0,154,68,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-icon .ms{font-size:36px;color:var(--accent)}
+.success-h{font-size:24px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.success-body{font-size:16px;color:var(--muted);line-height:1.65;max-width:400px;margin:0 auto 24px}
+
+/* JOURNEY STEPS */
+.journey{background:var(--surface);padding:var(--sy) 0}
+.journey-head{text-align:center;margin-bottom:52px}
+.journey-head h2{font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--navy);letter-spacing:-.025em}
+.journey-head p{color:var(--muted);font-size:16px;margin-top:10px;max-width:500px;margin-left:auto;margin-right:auto}
+.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);position:relative}
+.journey-grid::before{content:'';position:absolute;top:36px;left:calc(16.67% + 20px);right:calc(16.67% + 20px);height:1px;background:var(--border);z-index:0}
+.journey-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px;text-align:center;position:relative;z-index:1;transition:transform .25s,box-shadow .25s,border-color .25s}
+.journey-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);border-color:var(--accent)}
+.jc-num{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:24px;font-weight:800;border:2px solid var(--border);background:var(--white);color:var(--navy);position:relative;z-index:1}
+.journey-card:last-child .jc-num{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.jc-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.jc-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.jc-body{font-size:14px;color:var(--muted);line-height:1.65}
+.jc-checks{margin-top:16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--border);padding-top:16px}
+.jcheck{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);text-align:left}
+.jcheck .ms{font-size:16px;color:var(--accent)}
+
+/* SECURITY */
+.security{background:var(--navy);padding:var(--sy) 0}
+.security-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.sec-h{font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--white);letter-spacing:-.025em;margin-bottom:16px;line-height:1.3}
+.sec-body{font-size:16px;color:rgba(255,255,255,.55);line-height:1.72;margin-bottom:32px}
+.sec-badges{display:flex;gap:10px;flex-wrap:wrap}
+.sec-badge{padding:6px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase}
+.sec-features{display:flex;flex-direction:column;gap:16px}
+.sec-feat{display:flex;align-items:flex-start;gap:16px;padding:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)}
+.sec-feat-icon{width:40px;height:40px;border-radius:var(--r-md);background:rgba(0,154,68,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-feat-icon .ms{color:var(--accent);font-size:20px}
+.sec-feat-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.sec-feat-body{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:60px 0 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.fb-name{font-size:20px;font-weight:800;color:var(--accent);letter-spacing:-.04em;margin-bottom:12px}
+.fb-desc{font-size:14px;color:rgba(255,255,255,.38);line-height:1.72;max-width:260px;margin-bottom:24px}
+.fb-socials{display:flex;gap:10px}
+.fb-soc{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:rgba(255,255,255,.4);transition:all .2s}
+.fb-soc:hover{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.fc-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:11px}
+.flink{font-size:14px;color:rgba(255,255,255,.45);transition:color .2s}.flink:hover{color:var(--white)}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.fc{font-size:12px;color:rgba(255,255,255,.28)}
+
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-contact-card{display:none}.form-section-inner{grid-template-columns:1fr}.form-sidebar{display:none}.security-inner{grid-template-columns:1fr}.journey-grid::before{display:none}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-ham{display:flex}.form-row{grid-template-columns:1fr}.journey-grid{grid-template-columns:1fr}.form-card{padding:32px 24px}.footer-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;text-align:center}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+
+.ev-link{color:var(--accent) !important;font-weight:700 !important;position:relative}
+.ev-link::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:5px;vertical-align:middle;animation:evpulse 1.8s ease-out infinite}
+@keyframes evpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.ev-link.active::after{background:var(--accent)}
+.fasopot-credit{font-size:12px;color:rgba(255,255,255,.22);display:flex;align-items:center;gap:6px}
+.fasopot-credit a{color:rgba(255,255,255,.35);transition:color .2s}.fasopot-credit a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="CASED Homepage.html" class="nav-brand">
+      <img class="nav-logo" src="assets/logo_cased.png" alt="Logo CASED">
+      <span class="nav-name">CASED</span>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" href="CASED Expertise.html">Expertise</a>
+      <a class="nav-link" href="CASED Approche.html">Approche</a>
+      <a class="nav-link" href="CASED A Propos.html">À Propos</a>
+      <a class="nav-link active" href="#">Contact</a>
+      <a class="nav-link ev-link" href="CASED SIIERES.html">SIIERES 2026</a>
+    </nav>
+    <a class="nav-cta" href="#">Consultation</a>
+    <button class="nav-ham" id="ham-btn"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-overlay" id="mob-overlay"></div>
+  <div class="mobile-drawer">
+    <button class="mobile-close" id="mob-close">✕</button>
+    <a class="mobile-link" href="CASED Homepage.html">Accueil</a>
+    <a class="mobile-link" href="CASED Expertise.html">Expertise</a>
+    <a class="mobile-link" href="CASED Approche.html">Notre Approche</a>
+    <a class="mobile-link" href="CASED A Propos.html">À Propos</a>
+    <a class="mobile-link active" href="#">Contact</a>
+    <a class="mobile-link" href="CASED SIIERES.html" style="color:var(--accent);font-weight:700">● SIIERES 2026</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-label reveal"><span class="ms" style="font-size:13px">hub</span>Demande d'Expertise</div>
+      <h1 class="hero-h1 reveal d1">Engagez<br>l'<span class="acc">expertise souveraine</span></h1>
+      <p class="hero-desc reveal d2">Décrivez votre projet stratégique. Notre équipe analyse votre demande et vous propose un diagnostic initial dans les 24 heures ouvrables.</p>
+      <div class="hero-trust reveal d3">
+        <div class="htrust-item"><span class="ms ms-fill">verified_user</span>Confidentialité de niveau étatique</div>
+        <div class="htrust-item"><span class="ms ms-fill">schedule</span>Réponse sous 24h ouvrables</div>
+        <div class="htrust-item"><span class="ms ms-fill">shield</span>Données traitées en environnement souverain</div>
+      </div>
+    </div>
+    <div class="hero-contact-card reveal d1">
+      <div class="hcc-title">Coordonnées du Cabinet</div>
+      <div class="hcc-items">
+        <div class="hcc-item">
+          <div class="hcc-icon"><span class="ms">location_on</span></div>
+          <div>
+            <div class="hcc-label">Adresse</div>
+            <div class="hcc-value">BP 30162 Ouaga Pissy<br>Ouagadougou, Burkina Faso</div>
+          </div>
+        </div>
+        <div class="hcc-divider"></div>
+        <div class="hcc-item">
+          <div class="hcc-icon"><span class="ms">mail</span></div>
+          <div>
+            <div class="hcc-label">Email</div>
+            <div class="hcc-value">contact@cased-bf.com</div>
+          </div>
+        </div>
+        <div class="hcc-divider"></div>
+        <div class="hcc-item">
+          <div class="hcc-icon"><span class="ms">call</span></div>
+          <div>
+            <div class="hcc-label">Téléphones</div>
+            <div class="hcc-value">+226 25 43 11 44<br>+226 70 20 50 57 / 54 84 32 32</div>
+          </div>
+        </div>
+        <div class="hcc-divider"></div>
+        <div class="hcc-item">
+          <div class="hcc-icon"><span class="ms">language</span></div>
+          <div>
+            <div class="hcc-label">Site Web</div>
+            <div class="hcc-value">cased-bf.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="response-badge">
+        <span class="ms ms-fill">schedule</span>
+        <span>Réponse garantie sous 24 heures ouvrables</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="formulaire">
+  <div class="wrap form-section-inner">
+    <!-- Sidebar -->
+    <div class="form-sidebar reveal">
+      <h2 class="sidebar-h">Compléter votre brief projet</h2>
+      <p class="sidebar-desc">Renseignez ce formulaire pour initier votre consultation stratégique. Plus votre description est précise, plus notre réponse sera adaptée à vos enjeux.</p>
+      <div class="sidebar-features">
+        <div class="sf-item"><div class="sf-dot"></div><div class="sf-text"><strong>Analyse de souveraineté</strong> — Diagnostic initial offert sur votre secteur d'intervention</div></div>
+        <div class="sf-item"><div class="sf-dot"></div><div class="sf-text"><strong>Confidentialité totale</strong> — Chaque brief est chiffré dès réception</div></div>
+        <div class="sf-item"><div class="sf-dot"></div><div class="sf-text"><strong>Réponse personnalisée</strong> — Pas de réponse générique, une équipe dédiée à votre dossier</div></div>
+        <div class="sf-item"><div class="sf-dot"></div><div class="sf-text"><strong>Expertise multisectorielle</strong> — Mines, Énergie, Environnement, Juridique</div></div>
+      </div>
+      <div class="sidebar-legal">
+        <div class="sl-label">Identifiants Légaux</div>
+        <div class="sl-badges">
+          <div class="sl-badge"><span class="ms ms-fill" style="font-size:12px;vertical-align:middle;color:var(--accent)">verified</span> RCCM : BJ-COO-01-2024-B13-00042</div>
+          <div class="sl-badge"><span class="ms ms-fill" style="font-size:12px;vertical-align:middle;color:var(--accent)">verified</span> IFU : 3202415487901</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="reveal d1">
+      <div class="form-card" id="form-card">
+        <h3 class="form-title">Demande de Consultation Stratégique</h3>
+        <p class="form-subtitle">Mobilisez notre laboratoire d'idées souveraines pour vos projets de développement multisectoriels.</p>
+
+        <form id="consult-form" novalidate>
+          <div class="form-row">
+            <div class="fg">
+              <label class="flabel">Nom Complet<span class="freq">*</span></label>
+              <input class="finput" type="text" name="nom" placeholder="Jean-Luc Kaboré" required>
+            </div>
+            <div class="fg">
+              <label class="flabel">Organisation / Ministère<span class="freq">*</span></label>
+              <input class="finput" type="text" name="organisation" placeholder="Ministère du Plan" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label class="flabel">Email Professionnel<span class="freq">*</span></label>
+              <input class="finput" type="email" name="email" placeholder="j.dupont@institution.gov" required>
+            </div>
+            <div class="fg">
+              <label class="flabel">Téléphone<span class="freq">*</span></label>
+              <input class="finput" type="tel" name="telephone" placeholder="+226 XX XX XX XX" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flabel">Secteur d'Intervention<span class="freq">*</span></label>
+            <select class="finput" name="secteur" required>
+              <option value="">Sélectionnez votre secteur…</option>
+              <option>Mines &amp; Souveraineté Industrielle</option>
+              <option>Environnement &amp; RSE Endogène</option>
+              <option>Énergies Renouvelables &amp; Autonomie</option>
+              <option>Art de la Validité — Juridique &amp; Conformité</option>
+              <option>Gouvernance &amp; Cadre Normatif</option>
+              <option>Modélisation Financière &amp; Macroéconomie</option>
+              <option>Partenariat Institutionnel AES</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="flabel">Description Synthétique du Projet<span class="freq">*</span></label>
+            <textarea class="finput" name="projet" placeholder="Quels sont les enjeux stratégiques de votre sollicitation ? Décrivez le contexte, les objectifs et les défis principaux de votre mission…" required></textarea>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="rgpd" name="rgpd" required>
+            <label for="rgpd">J'accepte la politique de confidentialité panafricaine du CASED et consens au traitement de mes données aux fins de réponse à ma demande de consultation. <a href="#">Lire la politique</a>.</label>
+          </div>
+          <button class="fsubmit" type="submit" id="submit-btn">
+            <span class="ms" style="font-size:20px">send</span>
+            Initier la Consultation
+          </button>
+          <p class="form-footer-note">
+            <span class="acc">*</span> Champs obligatoires — Réponse garantie sous 24h ouvrables — Confidentialité totale
+          </p>
+        </form>
+
+        <!-- Success state -->
+        <div class="success-state" id="success-state">
+          <div class="success-icon"><span class="ms ms-fill" style="font-size:36px;color:var(--accent)">check_circle</span></div>
+          <h3 class="success-h">Demande envoyée avec succès</h3>
+          <p class="success-body">Votre brief a été transmis à notre équipe. Vous recevrez une réponse personnalisée à <strong id="conf-email">votre adresse email</strong> dans les 24 heures ouvrables.</p>
+          <a class="btn btn-outline" href="CASED Homepage.html">Retour à l'accueil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey">
+  <div class="wrap">
+    <div class="journey-head reveal">
+      <h2>Votre Parcours avec CASED</h2>
+      <p>Trois étapes simples de votre demande à la livraison stratégique.</p>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-card reveal">
+        <div class="jc-num">01</div>
+        <div class="jc-label">Étape 01</div>
+        <div class="jc-title">Diagnostic de Souveraineté</div>
+        <p class="jc-body">Analyse approfondie des écarts stratégiques et identification des vulnérabilités institutionnelles pour définir un socle solide d'intervention.</p>
+        <div class="jc-checks">
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Audit multisectoriel</div>
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Cartographie des risques</div>
+        </div>
+      </div>
+      <div class="journey-card reveal d1">
+        <div class="jc-num">02</div>
+        <div class="jc-label">Étape 02</div>
+        <div class="jc-title">Architecture Stratégique</div>
+        <p class="jc-body">Conception de solutions endogènes sur mesure, alignées sur les réalités juridiques et les ambitions de croissance souveraine du pays.</p>
+        <div class="jc-checks">
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Plan directeur tactique</div>
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Cadre légal optimisé</div>
+        </div>
+      </div>
+      <div class="journey-card reveal d2">
+        <div class="jc-num">03</div>
+        <div class="jc-label">Étape 03</div>
+        <div class="jc-title">Exécution &amp; Impact</div>
+        <p class="jc-body">Déploiement opérationnel, monitoring rigoureux des indicateurs de performance souveraine et transfert de compétences aux équipes nationales.</p>
+        <div class="jc-checks">
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Suivi de performance</div>
+          <div class="jcheck"><span class="ms ms-fill" style="font-size:16px">check_circle</span>Transfert de compétences</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security">
+  <div class="wrap security-inner">
+    <div class="reveal">
+      <span class="sec-label">Souveraineté des Données</span>
+      <h2 class="sec-h">Confidentialité Institutionnelle Garantie</h2>
+      <p class="sec-body">Chaque interaction au sein de CASED est protégée par des protocoles de sécurité de niveau étatique. Vos briefs projets sont traités dans un environnement isolé et souverain, sans transmission à des tiers.</p>
+      <div class="sec-badges">
+        <span class="sec-badge">RCCM : BJ-COO-01-2024-B13-00042</span>
+        <span class="sec-badge">IFU : 3202415487901</span>
+      </div>
+    </div>
+    <div class="sec-features reveal d1">
+      <div class="sec-feat">
+        <div class="sec-feat-icon"><span class="ms">lock_person</span></div>
+        <div>
+          <div class="sec-feat-title">Anonymisation Totale</div>
+          <p class="sec-feat-body">Les données sensibles sont chiffrées dès l'initiation du brief. Aucune information n'est stockée en clair sur nos serveurs.</p>
+        </div>
+      </div>
+      <div class="sec-feat">
+        <div class="sec-feat-icon"><span class="ms">verified</span></div>
+        <div>
+          <div class="sec-feat-title">Protocole Souverain</div>
+          <p class="sec-feat-body">Traitement de vos données conformément à la charte de confidentialité panafricaine CASED et aux cadres juridiques nationaux.</p>
+        </div>
+      </div>
+      <div class="sec-feat">
+        <div class="sec-feat-icon"><span class="ms">schedule</span></div>
+        <div>
+          <div class="sec-feat-title">Réponse en 24h</div>
+          <p class="sec-feat-body">Notre équipe analyse chaque brief individuellement et vous adresse une réponse personnalisée sous 24 heures ouvrables.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="fb-name">CASED</div>
+        <p class="fb-desc">Cabinet Africain de Stratégie & d'Expertise pour le Développement. Laboratoire d'idées souveraines au service du continent.</p>
+        <div class="fb-socials">
+          <a class="fb-soc" href="#" aria-label="LinkedIn">in</a>
+          <a class="fb-soc" href="#" aria-label="Twitter / X">𝕏</a>
+          <a class="fb-soc" href="https://cased-bf.com" target="_blank" aria-label="Site web"><span class="ms" style="font-size:16px;color:inherit">public</span></a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Expertise</div>
+        <div class="flinks">
+          <a class="flink" href="CASED Expertise.html#mines">Mines & Industrie</a>
+          <a class="flink" href="CASED Expertise.html#energies">Énergies AES</a>
+          <a class="flink" href="CASED Expertise.html#environnement">Environnement</a>
+          <a class="flink" href="CASED Expertise.html#validite">Cadre Normatif</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Cabinet</div>
+        <div class="flinks">
+          <a class="flink" href="CASED A Propos.html">À Propos</a>
+          <a class="flink" href="CASED Approche.html">Notre Approche</a>
+          <a class="flink" href="CASED Homepage.html#aes">Confédération AES</a>
+          <a class="flink" href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Légal</div>
+        <div class="flinks">
+          <a class="flink" href="CASED Mentions Legales.html">Mentions Légales</a>
+          <a class="flink" href="CASED Mentions Legales.html#confidentialite">Confidentialité</a>
+          <a class="flink" href="#">Registre RCCM/IFU</a>
+        </div>
+        <div style="margin-top:24px;font-size:11px;color:rgba(255,255,255,.25);line-height:2">
+          <div>contact@cased-bf.com</div>
+          <div>+226 25 43 11 44</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+            <div class="fasopot-credit">Design &amp; Digital by <a href="tel:+212777346787">FASOPOT DIGITAL</a> — +212 777 346 787</div>
+      <p class="fc">© 2026 CASED — Cabinet Africain de Stratégie & d'Expertise pour le Développement. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+const hamBtn=document.getElementById('ham-btn'),mm=document.getElementById('mobile-menu'),mc=document.getElementById('mob-close'),mo=document.getElementById('mob-overlay');
+function openM(){mm.classList.add('open');document.body.style.overflow='hidden'}
+function closeM(){mm.classList.remove('open');document.body.style.overflow=''}
+hamBtn.addEventListener('click',openM);mc.addEventListener('click',closeM);mo.addEventListener('click',closeM);
+mm.querySelectorAll('.mobile-link,.btn').forEach(l=>l.addEventListener('click',closeM));
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Form submission
+document.getElementById('consult-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('[name=email]').value;
+  const rgpd = this.querySelector('[name=rgpd]').checked;
+  if (!rgpd) { alert('Veuillez accepter la politique de confidentialité pour continuer.'); return; }
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="ms" style="font-size:20px">hourglass_empty</span> Traitement en cours…';
+  setTimeout(() => {
+    document.getElementById('conf-email').textContent = email || 'votre adresse email';
+    this.style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  }, 1800);
+});
+</script>
+</body>
+</html>

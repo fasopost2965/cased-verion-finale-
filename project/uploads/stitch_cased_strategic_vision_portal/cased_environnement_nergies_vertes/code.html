@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Environnement &amp; Énergies Vertes | CASED</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#a1d494",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#b6c6ef",
+                        "surface-dim": "#d9dadb",
+                        "surface-container": "#edeeef",
+                        "surface-bright": "#f8f9fa",
+                        "institutional-navy": "#1A2B4B",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#364768",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-container": "#8293b8",
+                        "tertiary-container": "#3a2800",
+                        "background": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "sovereign-gold": "#C5A059",
+                        "on-secondary-fixed-variant": "#23501e",
+                        "on-error": "#ffffff",
+                        "growth-green": "#2D5A27",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#081b3a",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#211500",
+                        "tertiary-fixed": "#ffdea5",
+                        "secondary": "#3b6934",
+                        "on-surface-variant": "#44474e",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#bcf0ae",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#4e5e81",
+                        "on-secondary-fixed": "#002201",
+                        "ink-black": "#0F172A",
+                        "surface": "#f8f9fa",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#b18d48",
+                        "on-error-container": "#93000a",
+                        "pure-white": "#FFFFFF",
+                        "primary-container": "#1a2b4b",
+                        "primary": "#031635",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c5c6cf",
+                        "on-secondary-container": "#3f6d38",
+                        "primary-fixed": "#d8e2ff",
+                        "outline": "#75777f",
+                        "secondary-container": "#b9eeab",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "120px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap-mobile": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-card {
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -20px rgba(45, 90, 39, 0.15);
+            border-color: #2D5A27;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant/30 bg-surface/80 shadow-sm">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-institutional-navy">CASED</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-body-md text-body-md text-sovereign-gold font-bold border-b-2 border-sovereign-gold pb-1" href="#">Expertise</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">Approche</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">À Propos</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">Contact</a>
+<button class="bg-sovereign-gold text-pure-white px-6 py-2 rounded hover:opacity-80 transition-opacity font-body-md font-bold">Consultation</button>
+</div>
+<button class="md:hidden text-institutional-navy">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Section 1: Hero -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXsX_ykZqvO3a0tXcPEVoytwjIXhaO0RNvIDRFEKNPQl92ykIAi0Sp2ickeIwTvjtAszIvJol1CfToiUNWF7KMAIqerceg41yo1WluRgVFXuGRM1YXIpAi0NS5TilaiX7-vIfHcql_aqIknAyAm_WE96MVje5iFTnxMCaajfE-tmfyrNupEFp_dSR2IHxn8TjpD2Q75B-oWNqyeFot9hnz1jIJlUbgqR7rhtm6KoCsiKe1J03lmFj0op1qy-Nkrw2PfLbE07UHcID"/>
+<div class="absolute inset-0 bg-gradient-to-r from-institutional-navy/90 via-institutional-navy/40 to-transparent"></div>
+</div>
+<div class="container max-w-container-max mx-auto px-gutter relative z-10">
+<div class="max-w-2xl text-pure-white">
+<span class="inline-block bg-growth-green/20 backdrop-blur-md border border-growth-green/30 text-secondary-fixed-dim font-label-caps text-label-caps px-4 py-1 mb-6">
+                        Transition Énergétique &amp; Climat
+                    </span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">
+                        Souveraineté Énergétique &amp; Résilience Climatique
+                    </h1>
+<p class="font-body-lg text-body-lg text-surface-variant/90 mb-10">
+                        CASED accompagne les acteurs institutionnels et privés dans la mutation profonde des mix énergétiques du Sahel, alliant indépendance stratégique et impératifs écologiques.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-sovereign-gold text-pure-white px-8 py-4 font-body-md font-bold hover:scale-[1.02] transition-transform">
+                            Découvrir nos solutions
+                        </button>
+<button class="border border-pure-white/30 backdrop-blur-sm text-pure-white px-8 py-4 font-body-md font-bold hover:bg-pure-white/10 transition-colors">
+                            Nos expertises
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Politiques Environnementales -->
+<section class="py-section-gap-desktop bg-pure-white">
+<div class="container max-w-container-max mx-auto px-gutter">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<div class="h-px w-12 bg-growth-green"></div>
+<span class="text-growth-green font-label-caps text-label-caps uppercase tracking-widest">Gouvernance Durable</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-8">
+                            Politiques Environnementales &amp; RSE Endogène
+                        </h2>
+<div class="space-y-8">
+<div class="p-8 border-l-4 border-sovereign-gold bg-surface-container-lowest">
+<h3 class="font-headline-sm text-headline-sm mb-3">Normes AES &amp; Audit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Déploiement de protocoles d'audit environnemental rigoureux alignés sur les nouveaux cadres régulateurs de l'Alliance des États du Sahel, garantissant une conformité souveraine.
+                                </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Notre approche de la Responsabilité Sociétale des Entreprises n'est pas un import conceptuel, mais un levier de développement local. Nous structurons l'investissement communautaire pour transformer les contraintes environnementales en opportunités d'ancrage territorial.
+                            </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green">check_circle</span>
+<span class="font-body-md text-body-md">Évaluation d'impact environnemental (EIE)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green">check_circle</span>
+<span class="font-body-md text-body-md">Stratégies de contenu local environnemental</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green">check_circle</span>
+<span class="font-body-md text-body-md">Veille réglementaire panafricaine</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded overflow-hidden">
+<img alt="Socio-environmental impact" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSW5K6ZtdM2eDb9JbVcqrxup5h_CZ7vqTeDy6ej67LcKvp3UxyXXKWgf69GCu795HgM3Nn_prUjJB9l10muWAop14uz_MeQ2EgqkoAGnSVsLtt7z8SEqZUXXXC3N5_paKllMNUmVEkBHORpuNdP5hBMx6E08u_Qqkd-irWzr_hJP0vCbxaTBmHMYhAJaWX_t-yQsumahrzzngbo5U-S03b834RfSi353IdMQLJj2ykz40udwFFKc8RiS4d_BNilMgUNN8BRyYN2zj"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-institutional-navy p-10 text-pure-white shadow-2xl hidden lg:block">
+<p class="font-headline-md text-headline-md mb-2">100%</p>
+<p class="font-label-caps text-label-caps uppercase opacity-70">Conformité Normative</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Transition Énergétique -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="container max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-20 max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-6">Transition Énergétique &amp; Infras Solaires</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Au-delà du simple déploiement technologique, CASED conçoit l'énergie comme le socle de l'industrialisation sahélienne.
+                    </p>
+</div>
+<div class="grid lg:grid-cols-12 gap-unit">
+<div class="lg:col-span-8 relative group overflow-hidden rounded">
+<img alt="Solar Farm Infrastructure" class="w-full h-full object-cover min-h-[500px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGkq-Opnk2_ek4GurvUivLxQdfDh6T6gA_ogb_DzTwoeMtiPlYi9S6F-zj0qUksMLeTKfLNTblvWjjmHC38flllYz0ecSUPbCuCX1j_iTCCsUSBXh7mj0w2yr4Kqmr3oDYAiP5ekmvRCt-UBghZ37mDogamsgcEDUgThlLY1_vWKFMwVwrp7tmPfAYb76LUYI3bpjQURNZKp4IcGS-R-xVbyUmztsqNCAgclS4_hy9EQHiKuVWVXReczj1oZ4yMMjrhchidbXiSkTg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-institutional-navy/80 to-transparent flex flex-col justify-end p-12">
+<div class="bg-sovereign-gold w-16 h-1 mb-6"></div>
+<h3 class="font-headline-md text-headline-md text-pure-white mb-4">275+ MWc en Dimensionnement</h3>
+<p class="font-body-md text-body-md text-surface-variant max-w-lg">
+                                Expertise technique en ingénierie de projets solaires de grande envergure, du choix technologique à l'optimisation du rendement en milieu aride.
+                            </p>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-unit">
+<div class="bg-pure-white p-10 border border-outline-variant/30 flex-1 flex flex-col justify-center">
+<span class="material-symbols-outlined text-growth-green text-5xl mb-6">wb_sunny</span>
+<h4 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Autonomie Solaire</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Solutions d'autoconsommation pour les sites industriels et miniers, réduisant la dépendance aux énergies fossiles.
+                            </p>
+</div>
+<div class="bg-growth-green p-10 flex-1 flex flex-col justify-center text-pure-white">
+<span class="material-symbols-outlined text-sovereign-gold text-5xl mb-6">grid_view</span>
+<h4 class="font-headline-sm text-headline-sm mb-4">Mini-réseaux</h4>
+<p class="font-body-md text-body-md opacity-90">
+                                Électrification rurale décentralisée par micro-grids intelligents pour désenclaver les zones à fort potentiel agricole.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Projets Durables (Bento Grid) -->
+<section class="py-section-gap-desktop bg-pure-white overflow-hidden">
+<div class="container max-w-container-max mx-auto px-gutter">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-4">Piliers de Développement Durable</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                            Nos interventions ciblées visent la restauration des écosystèmes et la protection du capital naturel national.
+                        </p>
+</div>
+<button class="flex items-center gap-2 text-growth-green font-bold group">
+                        Consulter tous nos projets
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Bento Card 1 -->
+<div class="bento-card p-10 border border-outline-variant/50 bg-background flex flex-col h-full">
+<div class="bg-surface-container h-16 w-16 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-institutional-navy text-3xl">landscape</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Restauration des Sols</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 flex-grow">
+                            Programmes de lutte contre la désertification via des techniques d'agroforesterie et de gestion intégrée des bassins versants.
+                        </p>
+<div class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface-variant/60 uppercase">
+<span class="material-symbols-outlined text-sm">verified</span>
+                            Certification ISO 14001
+                        </div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bento-card p-10 border border-outline-variant/50 bg-background flex flex-col h-full">
+<div class="bg-surface-container h-16 w-16 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-institutional-navy text-3xl">electric_bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Indépendance Énergétique Rurale</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 flex-grow">
+                            Déploiement de kits de pompage solaire pour sécuriser la production agricole et l'accès à l'eau potable dans le Sahel.
+                        </p>
+<div class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface-variant/60 uppercase">
+<span class="material-symbols-outlined text-sm">verified</span>
+                            Contenu Local 85%
+                        </div>
+</div>
+<!-- Bento Card 3 -->
+<div class="bento-card p-10 border border-outline-variant/50 bg-background flex flex-col h-full">
+<div class="bg-surface-container h-16 w-16 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-institutional-navy text-3xl">policy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Contenu Local Environnemental</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 flex-grow">
+                            Ingénierie contractuelle pour maximiser les retombées écologiques et sociales des grands projets miniers et gaziers.
+                        </p>
+<div class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface-variant/60 uppercase">
+<span class="material-symbols-outlined text-sm">verified</span>
+                            Impact Communautaire
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="bg-institutional-navy py-24 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-64 h-64 border-2 border-pure-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 border-2 border-sovereign-gold rounded-full translate-x-1/3 translate-y-1/3"></div>
+</div>
+<div class="container max-w-container-max mx-auto px-gutter relative z-10 text-center">
+<h2 class="font-display-lg text-display-lg text-pure-white mb-8">Accélérez votre transition énergétique</h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-12 max-w-2xl mx-auto">
+                    Nos experts vous accompagnent dans l'élaboration de votre stratégie durable et la mise en œuvre de vos infrastructures vertes.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-sovereign-gold text-pure-white px-10 py-5 font-headline-sm text-body-md font-bold shadow-lg">Prendre rendez-vous</button>
+<button class="bg-pure-white/10 text-pure-white border border-pure-white/20 px-10 py-5 font-headline-sm text-body-md font-bold backdrop-blur-sm">Télécharger la brochure</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-institutional-navy w-full border-t border-outline/20">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap-mobile lg:py-section-gap-desktop flex flex-col gap-unit">
+<div class="grid lg:grid-cols-4 gap-12 mb-16">
+<div class="col-span-2">
+<div class="font-headline-sm text-headline-sm font-bold text-sovereign-gold mb-8">CASED</div>
+<p class="text-surface-variant font-body-md text-body-md max-w-sm mb-8">
+                        Cabinet Africain de Stratégie &amp; Expertise pour le Développement. Laboratoire d'idées souveraines pour une émergence structurelle du continent.
+                    </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 border border-outline/30 flex items-center justify-center text-pure-white hover:border-sovereign-gold transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="h-10 w-10 border border-outline/30 flex items-center justify-center text-pure-white hover:border-sovereign-gold transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-pure-white mb-8 uppercase">Expertise</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Souveraineté Économique</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Énergies Vertes</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Infrastructures Critiques</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Défense &amp; Sécurité</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-pure-white mb-8 uppercase">Navigation</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">À Propos</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Contact</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Mentions Légales</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors font-body-md text-body-md" href="#">Confidentialité</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline/10 text-surface-variant/50 font-body-md text-sm">
+                © 2024 CASED - Cabinet Africain de Stratégie &amp; Expertise pour le Développement. Tous droits réservés.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-1');
+                header.classList.remove('h-20');
+                header.classList.add('h-16');
+            } else {
+                header.classList.remove('py-1');
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+        });
+    </script>
+</body></html>

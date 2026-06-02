@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CASED - Cabinet Africain de Stratégie &amp; Expertise pour le Développement</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#261900",
+                        "tertiary": "#211500",
+                        "on-primary-container": "#8293b8",
+                        "tertiary-container": "#3a2800",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "growth-green": "#2D5A27",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-tint": "#4e5e81",
+                        "sovereign-gold": "#C5A059",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c5c6cf",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#1a2b4b",
+                        "surface": "#f8f9fa",
+                        "on-surface-variant": "#44474e",
+                        "surface-variant": "#e1e3e4",
+                        "outline": "#75777f",
+                        "secondary-fixed-dim": "#a1d494",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#002201",
+                        "secondary-fixed": "#bcf0ae",
+                        "pure-white": "#FFFFFF",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdea5",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "primary": "#031635",
+                        "ink-black": "#0F172A",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "on-tertiary-container": "#b18d48",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-container": "#edeeef",
+                        "institutional-navy": "#1A2B4B",
+                        "on-secondary-container": "#3f6d38",
+                        "inverse-primary": "#b6c6ef",
+                        "on-secondary-fixed-variant": "#23501e",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "secondary-container": "#b9eeab",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed": "#081b3a",
+                        "secondary": "#3b6934",
+                        "on-background": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card:hover {
+            box-shadow: 0 10px 40px -10px rgba(197, 160, 89, 0.15);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-20">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+<div class="flex items-center gap-4">
+<img alt="CASED Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjOpTtngvk4dL0UZVc0oL8D6ttl-23qLv5Qpjo4n8wryr8tr6yFI5w7qGzeoFFN9pjAaWCX43QEkhueLOgARxaMhYpZ4Mc6keh1aYYdo5QFDgrpVu-TKoW2gZIN6jwp_1yKKCmgQY5hE1ytalUgR9Ktx9JALld3P0WXwBGzEnv87jTtHk7w9c61HijdNN9ldl_5CSb6kfYqEvniAtD-T6e6oaXEx_kTw2mdThzxsowySzbmb8jbknOEzoVVzGmOazeiDdxct7NMDS"/>
+<span class="font-headline-sm text-headline-sm font-bold text-institutional-navy">CASED</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-sovereign-gold font-bold border-b-2 border-sovereign-gold pb-1" href="#">Expertise</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">Approche</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">À Propos</a>
+<a class="font-body-md text-body-md text-institutional-navy hover:text-sovereign-gold transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-sovereign-gold text-pure-white px-6 py-2.5 rounded font-bold hover:opacity-80 transition-opacity">
+                Consultation
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="pt-40 pb-section-gap-mobile lg:pb-section-gap-desktop bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-16 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 bg-secondary-container/30 px-4 py-1.5 rounded-full text-secondary font-bold text-label-caps uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">verified_user</span> Souveraineté &amp; Développement
+                </div>
+<h1 class="font-display-lg-mobile lg:font-display-lg text-display-lg-mobile lg:text-display-lg text-institutional-navy leading-tight">
+                    Ingénierie de la <span class="text-sovereign-gold">Souveraineté Économique</span> du Burkina Faso et de l'AES
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Le Cabinet Africain de Stratégie &amp; Expertise pour le Développement propulse une vision endogène de la croissance, alliant rigueur technique et patriotisme stratégique pour transformer les potentiels nationaux en leviers de puissance.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-sovereign-gold text-pure-white px-8 py-4 rounded-lg font-bold text-body-lg hover:shadow-lg transition-all flex items-center gap-2">
+                        Démarrer un projet <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<button class="border-2 border-institutional-navy text-institutional-navy px-8 py-4 rounded-lg font-bold text-body-lg hover:bg-institutional-navy hover:text-pure-white transition-all">
+                        Notre Méthode
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container rounded-3xl overflow-hidden shadow-2xl relative">
+<img alt="CASED Context" class="w-full h-full object-cover mix-blend-multiply opacity-20 absolute inset-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjOpTtngvk4dL0UZVc0oL8D6ttl-23qLv5Qpjo4n8wryr8tr6yFI5w7qGzeoFFN9pjAaWCX43QEkhueLOgARxaMhYpZ4Mc6keh1aYYdo5QFDgrpVu-TKoW2gZIN6jwp_1yKKCmgQY5hE1ytalUgR9Ktx9JALld3P0WXwBGzEnv87jTtHk7w9c61HijdNN9ldl_5CSb6kfYqEvniAtD-T6e6oaXEx_kTw2mdThzxsowySzbmb8jbknOEzoVVzGmOazeiDdxct7NMDS"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-institutional-navy/10 to-transparent"></div>
+<div class="p-8 h-full flex flex-col justify-end">
+<div class="bg-pure-white/90 backdrop-blur p-6 rounded-xl border border-outline-variant shadow-lg">
+<p class="italic text-institutional-navy font-medium mb-4">"Nous ne sommes pas seulement des consultants, nous sommes les architectes d'une indépendance durable."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-growth-green flex items-center justify-center text-pure-white">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<p class="font-bold text-institutional-navy">Vision PND RELANCE</p>
+<p class="text-sm text-on-surface-variant">36 190,7 mds FCFA mobilisés</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-sovereign-gold/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 bg-growth-green/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission + Badges -->
+<section class="py-20 border-y border-outline-variant/30 bg-pure-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col items-center justify-between gap-12 text-center">
+<div class="max-w-3xl w-full text-center mx-auto">
+<h2 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Notre Engagement Institutionnel</h2>
+<blockquote class="text-2xl font-bold text-ink-black leading-relaxed mx-auto">
+                        "Devenir le <span class="text-sovereign-gold">partenaire d'ingénierie de référence</span> pour la transformation structurelle des économies de l'Espace AES."
+                    </blockquote>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise Bento Grid -->
+<section class="py-section-gap-desktop bg-background">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-16">
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-4">Piliers d'Expertise Stratégique</h2>
+<div class="h-1 w-20 bg-sovereign-gold"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Mines -->
+<div class="md:col-span-8 bento-card group relative bg-pure-white p-10 rounded-2xl border border-outline-variant/50 flex flex-col justify-between overflow-hidden transition-all duration-500">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-5 group-hover:opacity-10 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A macro cinematic shot of mineral rock samples with gold veins, presented on a minimalist white stone pedestal under soft gallery lighting. The style is institutional, clean, and professional, reflecting the mining sovereignty of Burkina Faso with a palette of deep navy and bright gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARhHNJlgE0CXOj13jx7UZ1g3tJcyIzNy6G137Xe3coc-z16R4iZZQYpswwjpeFHpPaHWmUUDFhDxuOL4AaqvfYSpFGhICmTBu3IQOEvAwZOutzbxgi2YUF9GS5-zMlRBguxreaC9avMhCHJFmgtBA6uPzr36-GPQhls7f2PpjEK3-aZkk3d1q61Cw8Y2REIp4EWNoz_V3do9DCDCoR6__gIgFsRnFRKYwwN9RYIwC3Y443EpxqUiYjl_0jKYrdXyzkokNjXMtxKC-d"/>
+</div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-institutional-navy text-pure-white rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">Mines &amp; Souveraineté Industrielle</h3>
+<p class="text-on-surface-variant max-w-md">Audit stratégique des concessions et structuration de chaînes de valeur locales pour capter la rente minérale.</p>
+</div>
+<a class="text-sovereign-gold font-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explorer le secteur <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<!-- Environnement -->
+<div class="md:col-span-4 bento-card bg-growth-green text-pure-white p-10 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+<div>
+<div class="w-12 h-12 bg-pure-white/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Environnement &amp; RSE Endogène</h3>
+<p class="opacity-80">Développement durable ancré dans les réalités sahéliennes et protection de l'écosystème souverain.</p>
+</div>
+</div>
+<!-- Energies -->
+<div class="md:col-span-4 bento-card bg-institutional-navy text-pure-white p-10 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+<div>
+<div class="w-12 h-12 bg-sovereign-gold rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Énergies &amp; Autonomie</h3>
+<p class="opacity-80">Transition énergétique et déploiement de solutions solaires pour une indépendance réseau totale.</p>
+</div>
+</div>
+<!-- Validité -->
+<div class="md:col-span-8 bento-card bg-surface-container-high p-10 rounded-2xl border border-outline-variant flex flex-col md:flex-row gap-8 items-center hover:border-sovereign-gold transition-colors duration-300">
+<div class="md:w-2/3">
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">L'Art de la Validité</h3>
+<p class="text-on-surface-variant mb-6">Sécurisation juridique et normative des grands projets d'infrastructure. Nous garantissons la conformité institutionnelle face aux standards internationaux tout en préservant l'intérêt national.</p>
+<div class="flex gap-4">
+<span class="bg-pure-white px-3 py-1 text-xs font-bold rounded border border-outline-variant text-institutional-navy">AUDIT JURIDIQUE</span>
+<span class="bg-pure-white px-3 py-1 text-xs font-bold rounded border border-outline-variant text-institutional-navy">CONFORMITÉ</span>
+</div>
+</div>
+<div class="md:w-1/3 flex justify-center">
+<span class="material-symbols-outlined text-[120px] text-sovereign-gold opacity-20">gavel</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sentiers Majeurs -->
+<section class="py-section-gap-desktop bg-institutional-navy text-pure-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-20">
+<h2 class="font-headline-md text-headline-md mb-4">Nos Sentiers Majeurs</h2>
+<p class="text-on-primary-container max-w-2xl mx-auto">Axes stratégiques de déploiement pour la résilience de l'espace AES.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="border-l-4 border-sovereign-gold pl-8 py-6 hover:bg-pure-white/5 transition-colors group">
+<h4 class="text-sovereign-gold font-bold text-label-caps mb-4">SENTIER 01</h4>
+<h3 class="font-headline-sm text-headline-sm mb-4">Souveraineté Économique</h3>
+<p class="text-surface-variant">Modélisation de structures financières capables d'autofinancer le développement national.</p>
+</div>
+<div class="border-l-4 border-growth-green pl-8 py-6 hover:bg-pure-white/5 transition-colors group">
+<h4 class="text-growth-green font-bold text-label-caps mb-4">SENTIER 02</h4>
+<h3 class="font-headline-sm text-headline-sm mb-4">Résilience Énergétique</h3>
+<p class="text-surface-variant">Infrastructures critiques pour une production d'énergie décentralisée et sécurisée.</p>
+</div>
+<div class="border-l-4 border-pure-white pl-8 py-6 hover:bg-pure-white/5 transition-colors group">
+<h4 class="text-pure-white/60 font-bold text-label-caps mb-4">SENTIER 03</h4>
+<h3 class="font-headline-sm text-headline-sm mb-4">Cadre Normatif Endogène</h3>
+<p class="text-surface-variant">Révision des cadres légaux pour favoriser les champions nationaux et les partenariats équitables.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Méthodologie -->
+<section class="py-section-gap-desktop bg-pure-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<h2 class="font-headline-md text-headline-md text-institutional-navy mb-8">Notre Méthodologie de Rupture</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-growth-green">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-institutional-navy mb-2">Co-Construction</h4>
+<p class="text-on-surface-variant">Intégration des acteurs locaux dès la phase de conception pour garantir l'appropriation sociale.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-growth-green">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-institutional-navy mb-2">Financement Innovant</h4>
+<p class="text-on-surface-variant">Mobilisation de ressources alternatives et optimisation des budgets souverains.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-growth-green">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-institutional-navy mb-2">Patriotisme Technologique</h4>
+<p class="text-on-surface-variant">Priorité au transfert de compétences et à l'usage de technologies maîtrisables localement.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 bg-surface-container-low p-12 rounded-3xl border border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-12 text-center">Cycle d'Expertise en 5 Étapes</h3>
+<div class="relative space-y-12 before:content-[''] before:absolute before:left-[15px] before:top-0 before:bottom-0 before:w-0.5 before:bg-outline-variant">
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-pure-white border-2 border-sovereign-gold rounded-full flex items-center justify-center font-bold text-sovereign-gold z-10 text-xs">1</div>
+<h5 class="font-bold text-institutional-navy">Diagnostic de Souveraineté</h5>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-pure-white border-2 border-sovereign-gold rounded-full flex items-center justify-center font-bold text-sovereign-gold z-10 text-xs">2</div>
+<h5 class="font-bold text-institutional-navy">Architecture Stratégique</h5>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-pure-white border-2 border-sovereign-gold rounded-full flex items-center justify-center font-bold text-sovereign-gold z-10 text-xs">3</div>
+<h5 class="font-bold text-institutional-navy">Modélisation Financière</h5>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-pure-white border-2 border-sovereign-gold rounded-full flex items-center justify-center font-bold text-sovereign-gold z-10 text-xs">4</div>
+<h5 class="font-bold text-institutional-navy">Sécurisation Normative</h5>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-sovereign-gold rounded-full flex items-center justify-center font-bold text-pure-white z-10 text-xs shadow-lg">5</div>
+<h5 class="font-bold text-institutional-navy">Supervision de l'Impact</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contexte Stratégique (AES) -->
+<section class="py-section-gap-desktop bg-surface-container-high relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-institutional-navy">Ancrage dans la Confédération AES</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Le CASED s'aligne sur les orientations stratégiques de la Confédération des États du Sahel (Mali-Burkina-Niger) pour bâtir un pôle de prospérité autonome.
+                    </p>
+<div class="bg-pure-white p-8 rounded-2xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-1.5 h-12 bg-sovereign-gold"></div>
+<div>
+<h4 class="font-bold text-xl text-institutional-navy">PND RELANCE</h4>
+<p class="text-sovereign-gold font-bold">Volume financier : 36 190,7 mds FCFA</p>
+</div>
+</div>
+<p class="text-on-surface-variant italic mb-6">"Le développement de l'Afrique par les Africains n'est plus une option, c'est un impératif de sécurité nationale."</p>
+<div class="flex items-center gap-4 text-sm font-bold text-institutional-navy">
+<span class="material-symbols-outlined">person</span>
+                            Capitaine Ibrahim Traoré - RPP
+                        </div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 h-full">
+<div class="bg-institutional-navy p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+<span class="text-4xl font-bold text-sovereign-gold mb-2">3</span>
+<span class="text-pure-white font-bold">Nations Unies par l'AES</span>
+</div>
+<div class="bg-pure-white p-8 rounded-2xl flex flex-col justify-center items-center text-center border border-outline-variant shadow-sm">
+<span class="text-4xl font-bold text-growth-green mb-2">100%</span>
+<span class="text-institutional-navy font-bold text-xs uppercase tracking-tighter">Engagement Endogène</span>
+</div>
+<div class="col-span-2 bg-growth-green/10 p-8 rounded-2xl border border-growth-green/20">
+<img class="w-full h-48 object-cover rounded-xl mb-4 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A stylized digital map of West Africa highlighted in gold and green, glowing on a dark, technical navy blue background. Fine geometric lines connect major capital cities like Ouagadougou, Bamako, and Niamey, representing strategic infrastructure and institutional links. The atmosphere is professional, sovereign, and forward-looking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXNSA0nhHcZIfUDDE9BjLPmGWr9T106es2-lTblk-A3OTC-zfcIErqYAOfTXjZITOLMEd63BAivExF5eVRiOKshj65iozzGt3bfUre89B3tHvJv62bVjqWIy_-ZleQ-iZztyKLXHNTTt0ADQx8Y0COAT5r886V92wkTY--c3h-eG8mW95WpxNT1dGFTKj2JQJ5nqacXk8qRURyfNZ6INluZqO6UPU72YE4T9v36Yj5Jnh51zO3P4b7GL0NB4B60moN5u_39MQRFWbp"/>
+<p class="text-growth-green font-bold text-center">Architecture de l'Espace Sahel</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap-desktop bg-pure-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-institutional-navy rounded-[40px] p-12 lg:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sovereign-gold/10 to-transparent"></div>
+<div class="grid lg:grid-cols-2 gap-20 relative z-10">
+<div>
+<h2 class="font-headline-md text-headline-md text-pure-white mb-6">Au service de la Révolution &amp; de la Souveraineté</h2>
+<p class="text-on-primary-container text-lg mb-12">
+                            Nos bureaux sont situés au cœur de Ouagadougou, prêts à accompagner les acteurs publics et privés dans leurs défis les plus complexes.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 text-pure-white">
+<span class="material-symbols-outlined text-sovereign-gold">location_on</span>
+<span>Ouagadougou, Burkina Faso</span>
+</div>
+<div class="flex items-center gap-4 text-pure-white">
+<span class="material-symbols-outlined text-sovereign-gold">mail</span>
+<span>contact@cased-strat.bf</span>
+</div>
+<div class="flex items-center gap-4 text-pure-white">
+<span class="material-symbols-outlined text-sovereign-gold">call</span>
+<span>+226 25 30 00 00</span>
+</div>
+</div>
+</div>
+<form class="space-y-4 bg-pure-white p-8 rounded-3xl">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-bold text-institutional-navy">Nom Complet</label>
+<input class="w-full border-outline-variant focus:border-sovereign-gold focus:ring-sovereign-gold rounded p-3" placeholder="Jean-Luc Kabore" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-institutional-navy">Organisation</label>
+<input class="w-full border-outline-variant focus:border-sovereign-gold focus:ring-sovereign-gold rounded p-3" placeholder="Ministère / Entreprise" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-institutional-navy">Email Institutionnel</label>
+<input class="w-full border-outline-variant focus:border-sovereign-gold focus:ring-sovereign-gold rounded p-3" placeholder="email@domaine.bf" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-institutional-navy">Votre Projet</label>
+<textarea class="w-full border-outline-variant focus:border-sovereign-gold focus:ring-sovereign-gold rounded p-3" placeholder="Décrivez les enjeux de votre mission..." rows="4"></textarea>
+</div>
+<button class="w-full bg-sovereign-gold text-pure-white font-bold py-4 rounded-lg hover:bg-opacity-90 transition-all">Envoyer la demande</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-institutional-navy text-pure-white pt-20 pb-10 border-t border-outline/20">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-4 mb-8">
+<img alt="CASED" class="h-10 w-10 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjOpTtngvk4dL0UZVc0oL8D6ttl-23qLv5Qpjo4n8wryr8tr6yFI5w7qGzeoFFN9pjAaWCX43QEkhueLOgARxaMhYpZ4Mc6keh1aYYdo5QFDgrpVu-TKoW2gZIN6jwp_1yKKCmgQY5hE1ytalUgR9Ktx9JALld3P0WXwBGzEnv87jTtHk7w9c61HijdNN9ldl_5CSb6kfYqEvniAtD-T6e6oaXEx_kTw2mdThzxsowySzbmb8jbknOEzoVVzGmOazeiDdxct7NMDS"/>
+<span class="font-headline-sm text-headline-sm font-bold text-sovereign-gold">CASED</span>
+</div>
+<p class="text-surface-variant max-w-sm mb-8">
+                        Le Cabinet Africain de Stratégie &amp; Expertise pour le Développement œuvre pour une Afrique autonome, résiliente et souveraine à travers une ingénierie de haut niveau.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-outline/30 rounded-full flex items-center justify-center hover:bg-sovereign-gold hover:border-sovereign-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 border border-outline/30 rounded-full flex items-center justify-center hover:bg-sovereign-gold hover:border-sovereign-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-6">Expertise</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Mines &amp; Industrie</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Énergies AES</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Environnement</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Cadre Normatif</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-6">Cabinet</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">À Propos</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Nos Sentiers</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Contact</a></li>
+<li><a class="text-surface-variant hover:text-pure-white transition-colors" href="#">Mentions Légales</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-surface-variant">
+<p>© 2024 CASED - Cabinet Africain de Stratégie &amp; Expertise pour le Développement. Tous droits réservés.</p>
+<div class="flex gap-6">
+<a class="hover:text-sovereign-gold" href="#">Confidentialité</a>
+<a class="hover:text-sovereign-gold" href="#">Sécurité</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth reveal interaction for bento cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

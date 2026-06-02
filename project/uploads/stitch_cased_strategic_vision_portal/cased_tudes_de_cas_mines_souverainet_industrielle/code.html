@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Études de Cas : Mines &amp; Souveraineté Industrielle | CASED</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#211500",
+                    "primary-fixed": "#d8e2ff",
+                    "growth-green": "#2D5A27",
+                    "surface-container": "#edeeef",
+                    "on-secondary-fixed-variant": "#23501e",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#4e5e81",
+                    "outline": "#75777f",
+                    "surface-container-high": "#e7e8e9",
+                    "surface": "#f8f9fa",
+                    "on-primary-fixed": "#081b3a",
+                    "on-surface": "#191c1d",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-container": "#b9eeab",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "outline-variant": "#c5c6cf",
+                    "on-secondary-fixed": "#002201",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "inverse-surface": "#2e3132",
+                    "sovereign-gold": "#C5A059",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "institutional-navy": "#1A2B4B",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdea5",
+                    "secondary-fixed": "#bcf0ae",
+                    "primary": "#031635",
+                    "inverse-primary": "#b6c6ef",
+                    "secondary": "#3b6934",
+                    "background": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "ink-black": "#0F172A",
+                    "tertiary-container": "#3a2800",
+                    "primary-fixed-dim": "#b6c6ef",
+                    "pure-white": "#FFFFFF",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#a1d494",
+                    "on-surface-variant": "#44474e",
+                    "on-primary-fixed-variant": "#364768",
+                    "surface-variant": "#e1e3e4",
+                    "primary-container": "#1a2b4b",
+                    "on-secondary-container": "#3f6d38",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#b18d48",
+                    "on-primary-container": "#8293b8",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-gap-mobile": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card-hover {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #2D5A27; /* growth-green */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.04);
+        }
+        .text-institutional-navy { color: #1A2B4B; }
+        .bg-institutional-navy { background-color: #1A2B4B; }
+        .text-sovereign-gold { color: #C5A059; }
+        .bg-sovereign-gold { background-color: #C5A059; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-institutional-navy dark:text-primary-fixed-dim">CASED</span>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sovereign-gold border-b-2 border-sovereign-gold pb-1 font-body-md" href="#">Expertise</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Strategy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Legal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Sovereign</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">About</a>
+<button class="bg-primary text-on-primary px-6 py-2 font-body-md font-semibold transition-all hover:bg-institutional-navy">
+                    Consultation
+                </button>
+</div>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Header -->
+<header class="py-section-gap-desktop bg-surface-container-lowest overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<span class="h-1 w-12 bg-sovereign-gold"></span>
+<span class="text-label-caps uppercase tracking-widest text-on-surface-variant">Pilier Industriel</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-institutional-navy">
+                            Études de Cas : Mines &amp; Souveraineté Industrielle
+                        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                            Accompagnement stratégique des États de l'AES pour une capture optimale de la valeur ajoutée locale. Nos interventions allient rigueur légale, expertise technique et vision patriotique pour transformer le sous-sol en moteur de développement souverain.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<div class="bg-surface-container-high px-4 py-2 flex items-center gap-2">
+<span class="text-label-caps text-institutional-navy">RCCM 2024-B-102</span>
+</div>
+<div class="bg-surface-container-high px-4 py-2 flex items-center gap-2">
+<span class="text-label-caps text-institutional-navy">IFU 32024151X</span>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] lg:h-[500px]">
+<img alt="Sustainable mining infrastructure in the Sahel" class="w-full h-full object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLu-W8qW0xNmuWdaOoNfsyvw5EU2Hrml8KU7DYZDfG3AkjTJ5YTucofv_TP_SAnuuBVC4tHln5JAI9vpfDnQql6INOHPdzTz8XQTl6Nflph7Pnfiu51laHeeHuzY-51KzDlLGZk_PYCUks029YUKY-Gu3u0xmVPX8cgR6X0l8QeO4lq30dajGkgNjGL60xoa7jnboZCitrGZl9Q2O5MVv3ZABU91Hg12YhlNZ0n9wE-jh9PE83EVUoK54Ikm"/>
+<div class="absolute -bottom-6 -left-6 bg-sovereign-gold p-8 hidden lg:block">
+<span class="block font-headline-md text-headline-md text-pure-white">+15%</span>
+<span class="text-label-caps text-pure-white/80">Croissance de la Valeur Locale</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Case Studies Grid -->
+<section class="py-section-gap-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Case Study 1: Large Card (Featured) -->
+<div class="md:col-span-8 group bento-card-hover bg-pure-white border border-outline-variant/30 flex flex-col lg:flex-row h-full">
+<div class="w-full lg:w-1/2 overflow-hidden">
+<div class="w-full h-full min-h-[300px] bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated industrial interior of a high-tech minerals processing plant in West Africa, featuring automated conveyor systems and clean, organized workspaces. The lighting is precise and professional, reflecting a state-of-the-art laboratory environment. The color palette emphasizes corporate blues and metallic silvers with subtle golden highlights, conveying precision and sovereign industrial power." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLu-W8qW0xNmuWdaOoNfsyvw5EU2Hrml8KU7DYZDfG3AkjTJ5YTucofv_TP_SAnuuBVC4tHln5JAI9vpfDnQql6INOHPdzTz8XQTl6Nflph7Pnfiu51laHeeHuzY-51KzDlLGZk_PYCUks029YUKY-Gu3u0xmVPX8cgR6X0l8QeO4lq30dajGkgNjGL60xoa7jnboZCitrGZl9Q2O5MVv3ZABU91Hg12YhlNZ0n9wE-jh9PE83EVUoK54Ikm');">
+</div>
+</div>
+<div class="w-full lg:w-1/2 p-10 flex flex-col justify-between">
+<div>
+<span class="text-label-caps text-growth-green flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    STRATÉGIE ÉTATIQUE
+                                </span>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">
+                                    Nationalisation de la Valeur Ajoutée Minière
+                                </h3>
+<p class="text-body-md text-on-surface-variant mb-6">
+                                    Conception d'un cadre législatif innovant pour un État de l'AES, imposant le raffinage local de 30% de la production aurifère brute avant exportation.
+                                </p>
+</div>
+<div class="flex items-center justify-between group/btn pt-4 border-t border-outline-variant/20">
+<span class="font-semibold text-institutional-navy">Voir les détails</span>
+<span class="material-symbols-outlined text-sovereign-gold transition-transform group-hover/btn:translate-x-2">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Case Study 2: Vertical Small -->
+<div class="md:col-span-4 group bento-card-hover bg-institutional-navy p-10 flex flex-col justify-between text-pure-white">
+<div>
+<span class="text-label-caps text-sovereign-gold mb-6 block">AUDIT &amp; CONFORMITÉ</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 leading-tight">
+                                Audit de Conformité d'une Fonderie Locale
+                            </h3>
+<p class="text-body-md text-pure-white/70">
+                                Évaluation technique et financière d'une unité de transformation de manganèse pour garantir l'alignement avec les standards ISO et les régulations environnementales souveraines.
+                            </p>
+</div>
+<div class="pt-8 flex items-center justify-between group/btn">
+<span class="font-semibold text-sovereign-gold">Rapport Complet</span>
+<span class="material-symbols-outlined text-sovereign-gold transition-transform group-hover/btn:translate-x-2">arrow_forward</span>
+</div>
+</div>
+<!-- Case Study 3: Horizontal Small -->
+<div class="md:col-span-6 group bento-card-hover bg-pure-white border border-outline-variant/30 p-10">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/3 aspect-square bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Close-up of professional mining engineers and legal experts reviewing large technical blueprints in a modern boardroom. The setting is formal, with institutional navy decor and warm wooden accents. Natural light floods the room from large windows overlooking an industrial skyline. The atmosphere is one of serious intellectual labor and strategic planning." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLu-W8qW0xNmuWdaOoNfsyvw5EU2Hrml8KU7DYZDfG3AkjTJ5YTucofv_TP_SAnuuBVC4tHln5JAI9vpfDnQql6INOHPdzTz8XQTl6Nflph7Pnfiu51laHeeHuzY-51KzDlLGZk_PYCUks029YUKY-Gu3u0xmVPX8cgR6X0l8QeO4lq30dajGkgNjGL60xoa7jnboZCitrGZl9Q2O5MVv3ZABU91Hg12YhlNZ0n9wE-jh9PE83EVUoK54Ikm'); filter: grayscale(1);">
+</div>
+</div>
+<div class="md:w-2/3 flex flex-col justify-center">
+<span class="text-label-caps text-growth-green mb-2 block">OPTIMISATION FISCALE</span>
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-3">
+                                    Optimisation des Redevances Étatiques
+                                </h3>
+<p class="text-body-md text-on-surface-variant">
+                                    Recouvrement de 45M€ d'impayés miniers grâce à une analyse croisée des données de production et des flux financiers internationaux.
+                                </p>
+<div class="mt-6 flex items-center gap-2 text-sovereign-gold font-semibold group/link cursor-pointer">
+<span>Consulter l'étude</span>
+<span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 4: Small Info Card -->
+<div class="md:col-span-6 group bento-card-hover bg-growth-green/5 border border-growth-green/20 p-10 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="bg-growth-green p-3">
+<span class="material-symbols-outlined text-pure-white">science</span>
+</div>
+<span class="text-label-caps text-growth-green font-bold">MÉTHODOLOGIE CASED</span>
+</div>
+<div class="mt-8">
+<h3 class="font-headline-sm text-headline-sm text-institutional-navy mb-4">
+                                Le Laboratoire des Idées Souveraines
+                            </h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                                    Modélisation économétrique des gisements
+                                </li>
+<li class="flex items-center gap-3 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                                    Ingénierie juridique des contrats de partage
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap-desktop bg-institutional-navy">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-display-lg text-display-lg text-pure-white mb-8">Propulsez votre Souveraineté Industrielle</h2>
+<p class="font-body-lg text-body-lg text-pure-white/80 max-w-2xl mx-auto mb-10">
+                    Nos experts sont prêts à auditer vos ressources et à concevoir les mécanismes de capture de valeur les plus adaptés à vos enjeux nationaux.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-sovereign-gold text-pure-white px-10 py-4 font-body-md font-bold transition-all hover:bg-sovereign-gold/90">
+                        Prendre Consultation
+                    </button>
+<button class="border border-pure-white/30 text-pure-white px-10 py-4 font-body-md font-bold transition-all hover:bg-pure-white hover:text-institutional-navy">
+                        Nos Rapports de Veille
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-ink-black border-t border-on-primary-fixed-variant w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-16 px-gutter max-w-container-max mx-auto">
+<div class="space-y-6">
+<span class="font-headline-sm text-headline-sm text-sovereign-gold block">CASED</span>
+<p class="text-on-primary-container text-body-md">
+                    Laboratoire de Souveraineté Institutionnelle &amp; Stratégie Multisectorielle pour l'Espace AES.
+                </p>
+</div>
+<div>
+<h4 class="text-pure-white font-bold mb-6">Expertises</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Mines &amp; Industrie</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Énergie &amp; Eau</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Infrastructure</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Souveraineté Numérique</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-pure-white font-bold mb-6">Institutionnel</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Methodology</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Institutional Relations</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">RCCM/IFU Registry</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-pure-white font-bold mb-6">Légal</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary-container hover:text-growth-green transition-colors font-body-md" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-on-primary-fixed-variant/20 py-8 px-gutter">
+<p class="text-on-primary-container text-center text-body-md opacity-80">
+                © 2024 CASED Institutional Strategy. All rights reserved. Sovereign Institutionalism Laboratory.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-0');
+            } else {
+                nav.classList.add('py-0');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body></html>
