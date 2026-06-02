@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="assets/logo_cased.png">
+<meta name="description" content="CASED — Cabinet Africain de Stratégie & d'Expertise pour le Développement. Ingénierie de la souveraineté économique du Burkina Faso et de l'AES.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASED — Cabinet Africain de Stratégie & d'Expertise pour le Développement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   TOKENS — CASED Sovereign Institutionalism
+═══════════════════════════════════════════════════ */
+:root {
+  --navy:      #1A2B4B;
+  --navy-deep: #0C1828;
+  --accent:    #009A44;
+  --accent-dk: #007A35;
+  --green:     #2D5A27;
+  --white:     #FFFFFF;
+  --surface:   #F8F9FA;
+  --surface2:  #EFF1F5;
+  --border:    #DDE1EC;
+  --text:      #191C1D;
+  --muted:     #44474E;
+  --dim:       #8B8FA8;
+  --font: 'Inter', system-ui, sans-serif;
+  --maxw: 1280px;
+  --px: clamp(20px,5vw,80px);
+  --sy: clamp(64px,9vw,112px);
+  --gap: 24px;
+  --r: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 20px;
+  --sh-sm: 0 1px 4px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --sh-md: 0 4px 20px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+  --sh-lg: 0 20px 48px rgba(0,0,0,.12),0 8px 16px rgba(0,0,0,.06);
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none !important;opacity:1 !important;transform:none !important}
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.6;color:var(--text);background:var(--surface);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:var(--font);cursor:pointer;border:none;background:none}
+ul{list-style:none}
+.ms{font-family:'Material Symbols Outlined';font-style:normal;font-size:22px;line-height:1;user-select:none;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+.ms-fill{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.finput:focus-visible{outline:2px solid var(--accent);outline-offset:0}
+
+/* Layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--px);padding-right:var(--px)}
+.section-y{padding-top:var(--sy);padding-bottom:var(--sy)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--r);transition:all .2s ease;white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--white)}
+.btn-primary:hover{background:var(--accent-dk);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,154,68,.3)}
+.btn-outline{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.25);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:16px 36px;font-size:16px}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.badge-green{background:rgba(45,90,39,.12);color:var(--green)}
+.badge-accent{background:rgba(0,154,68,.12);color:#006830}
+.badge-navy{background:rgba(26,43,75,.08);color:var(--navy)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.v{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ─── NAVIGATION ─────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;background:rgba(248,249,250,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--sh-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-logo{height:64px;width:auto;object-fit:contain}
+.nav-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.04em}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;position:relative;padding-bottom:2px}
+.nav-link:hover{color:var(--navy)}
+.nav-link.active{color:var(--navy);font-weight:600}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--accent);border-radius:2px}
+.nav-cta{background:var(--accent);color:var(--white);padding:10px 22px;font-size:14px;font-weight:600;border-radius:var(--r);transition:all .2s}
+.nav-cta:hover{background:var(--accent-dk);transform:translateY(-1px)}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.nav-ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+
+/* Mobile drawer */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:300;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.mobile-drawer{position:relative;z-index:1;background:var(--white);width:300px;height:100%;padding:24px;margin-left:auto;display:flex;flex-direction:column;gap:8px;overflow-y:auto}
+.mobile-close{align-self:flex-end;padding:8px;color:var(--muted);font-size:20px;cursor:pointer;background:none;border:none;font-family:var(--font)}
+.mobile-link{display:block;padding:14px 0;font-size:16px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--border)}
+
+/* ─── HERO ───────────────────────────────────── */
+.hero{padding-top:76px;min-height:100svh;background:var(--navy-deep);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(0,154,68,.22) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.hero-glow{position:absolute;top:-10%;right:-5%;width:55%;height:120%;background:radial-gradient(ellipse,rgba(26,43,75,.9) 10%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding-top:var(--sy);padding-bottom:var(--sy)}
+.hero-eyebrow{margin-bottom:22px}
+.hero-h1{font-size:clamp(36px,4.5vw,58px);font-weight:800;line-height:1.07;letter-spacing:-.035em;color:var(--white);margin-bottom:22px}
+.hero-h1 .gold{color:var(--accent)}
+.hero-desc{font-size:17px;line-height:1.72;color:rgba(255,255,255,.6);max-width:460px;margin-bottom:36px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Hero card */
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:40px;backdrop-filter:blur(8px)}
+.hero-quote{font-size:16px;font-style:italic;line-height:1.7;color:rgba(255,255,255,.75);margin-bottom:32px;padding-left:18px;border-left:3px solid var(--accent)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hstat{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);padding:22px 20px}
+.hstat-num{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--accent);letter-spacing:-.04em;line-height:1;margin-bottom:5px}
+.hstat-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em}
+.hstat.span2{grid-column:1/-1;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(0,154,68,.14),rgba(197,160,89,.04));border-color:rgba(0,154,68,.22)}
+.hstat.span2 .icon{width:42px;height:42px;border-radius:50%;background:rgba(0,154,68,.18);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+.hstat.span2 .icon .ms{font-size:20px}
+
+/* ─── TRUST BAND ─────────────────────────────── */
+.trust{background:var(--white);border-bottom:1px solid var(--border);padding:15px 0}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.trust-item .ms{font-size:16px;color:var(--green)}
+.trust-sep{width:1px;height:18px;background:var(--border)}
+.trust-legal{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);font-size:10px;font-weight:700;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+
+/* ─── VISION QUOTE ───────────────────────────── */
+.vision{background:var(--white);padding:var(--sy) 0;text-align:center}
+.vision-label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.vision-text{font-size:clamp(20px,2.6vw,28px);font-weight:600;line-height:1.5;color:var(--navy);max-width:840px;margin:0 auto}
+.vision-text .gold{color:var(--accent)}
+
+/* ─── EXPERTISE ──────────────────────────────── */
+.expertise{background:var(--surface);padding:var(--sy) 0}
+.section-head{margin-bottom:52px}
+.section-head .slabel{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.2}
+.accentbar{width:44px;height:3px;background:var(--accent);border-radius:2px;margin-top:14px}
+
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+.bc{border-radius:var(--r-lg);padding:40px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;position:relative;overflow:hidden}
+.bc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+
+.bc-mines{grid-column:1/9;background:var(--white);border:1px solid var(--border)}
+.bc-mines:hover{border-color:var(--accent)}
+.bc-env{grid-column:9/13;background:var(--green);color:var(--white)}
+.bc-energy{grid-column:1/5;background:var(--navy);color:var(--white)}
+.bc-validity{grid-column:5/13;background:var(--white);border:1px solid var(--border)}
+.bc-validity:hover{border-color:rgba(26,43,75,.4)}
+
+.bcard-icon{width:48px;height:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:22px;flex-shrink:0}
+.bcard-icon .ms{font-size:24px}
+.icon-navy{background:var(--navy);color:var(--white)}
+.icon-accent{background:var(--accent);color:var(--white)}
+.icon-w20{background:rgba(255,255,255,.18);color:var(--white)}
+.icon-w10{background:rgba(255,255,255,.12);color:var(--white)}
+
+.bcard-title{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
+.bcard-body{font-size:15px;line-height:1.65;color:var(--muted)}
+.bcard-body-w{color:rgba(255,255,255,.65)}
+.bcard-cta{display:inline-flex;align-items:center;gap:6px;margin-top:26px;font-size:14px;font-weight:600;color:var(--accent);transition:gap .2s}
+.bcard-cta:hover{gap:12px}
+.bcard-cta-w{color:rgba(255,255,255,.6)}
+.bcard-cta-w:hover{color:var(--white)}
+
+.mines-inner{display:grid;grid-template-columns:1fr auto;gap:32px;height:100%}
+.img-ph{border-radius:var(--r-md);background:linear-gradient(135deg,var(--surface2),var(--border));position:relative;overflow:hidden}
+.img-ph::after{content:attr(data-label);position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.img-ph::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(0,0,0,.03) 0,rgba(0,0,0,.03) 1px,transparent 1px,transparent 12px)}
+.mines-img{width:200px;height:100%;min-height:160px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.chip{padding:4px 12px;border:1px solid var(--border);border-radius:var(--r);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--surface)}
+
+/* ─── SENTIERS ───────────────────────────────── */
+.sentiers{background:var(--navy);padding:var(--sy) 0}
+.sentiers-head{text-align:center;margin-bottom:60px}
+.sentiers-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--white);letter-spacing:-.025em}
+.sentiers-head p{color:rgba(255,255,255,.45);font-size:16px;margin-top:10px}
+.sentiers-grid{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(255,255,255,.07);border-radius:var(--r-lg);overflow:hidden;gap:1px}
+.sitem{background:var(--navy);padding:48px 40px;transition:background .25s}
+.sitem:hover{background:rgba(255,255,255,.04)}
+.snum{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.s-accent{color:var(--accent)}.s-green{color:#5CB85C}.s-dim{color:rgba(255,255,255,.3)}
+.sitem h3{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:14px}
+.sitem p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.65}
+
+/* ─── METHODOLOGY ────────────────────────────── */
+.method{background:var(--white);padding:var(--sy) 0}
+.method-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.method-list{display:flex;flex-direction:column;gap:36px}
+.mitem{display:flex;gap:20px;align-items:flex-start}
+.micon{width:48px;height:48px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.micon .ms{font-size:22px}
+.mitem-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.mitem-body{font-size:15px;color:var(--muted);line-height:1.65}
+
+.cycle{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px}
+.cycle-title{font-size:17px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:36px}
+.cycle-steps{position:relative;display:flex;flex-direction:column;gap:0}
+.cycle-steps::before{content:'';position:absolute;left:16px;top:8px;bottom:8px;width:1px;background:var(--border)}
+.cstep{display:flex;align-items:flex-start;gap:20px;padding-bottom:28px;position:relative}
+.cstep:last-child{padding-bottom:0}
+.cstep-num{width:33px;height:33px;border-radius:50%;background:var(--white);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--navy);flex-shrink:0;position:relative;z-index:1}
+.cstep:last-child .cstep-num{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.cstep-text{font-size:15px;font-weight:600;color:var(--navy);padding-top:6px;line-height:1.3}
+
+/* ─── AES CONTEXT ────────────────────────────── */
+.aes{background:var(--surface);padding:var(--sy) 0}
+.aes-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.aes-body{font-size:17px;line-height:1.72;color:var(--muted);margin-bottom:32px}
+.pnd-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;box-shadow:var(--sh-sm)}
+.pnd-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+.pnd-bar{width:4px;height:52px;background:var(--accent);border-radius:2px;flex-shrink:0}
+.pnd-name{font-size:17px;font-weight:800;color:var(--navy)}
+.pnd-value{font-size:14px;font-weight:600;color:var(--accent);margin-top:4px}
+.pnd-quote{font-size:15px;font-style:italic;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:18px;margin-top:4px}
+.pnd-attr{font-size:12px;font-weight:600;color:var(--navy);margin-top:10px;font-style:normal;display:flex;align-items:center;gap:6px}
+.pnd-attr .ms{font-size:15px;color:var(--accent)}
+
+.aes-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ast{border-radius:var(--r-lg);padding:32px 26px;text-align:center}
+.ast-navy{background:var(--navy)}
+.ast-white{background:var(--white);border:1px solid var(--border)}
+.ast-green{background:var(--green)}
+.ast-num{font-size:42px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:8px}
+.ast-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ast-navy .ast-num,.ast-navy .ast-lbl,.ast-green .ast-num,.ast-green .ast-lbl{color:rgba(255,255,255,.9)}
+.ast-navy .ast-num{color:var(--accent)}
+.ast-white .ast-num{color:var(--navy)}
+.ast-white .ast-lbl{color:var(--muted)}
+.ast-green .ast-num{color:#D4F7E0}
+.aes-map{grid-column:1/-1;height:190px;border-radius:var(--r-lg);background:rgba(45,90,39,.07);border:1px solid rgba(45,90,39,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--green)}
+.aes-map .ms{font-size:44px;opacity:.35}
+.aes-map-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;opacity:.5}
+
+/* ─── CONTACT ────────────────────────────────── */
+.contact{background:var(--white);padding:var(--sy) 0}
+.contact-card{background:var(--navy-deep);border-radius:var(--r-xl);padding:clamp(40px,6vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:-30%;right:-10%;width:55%;height:160%;background:radial-gradient(ellipse,rgba(0,154,68,.09) 0%,transparent 65%);pointer-events:none}
+.contact-left{position:relative;z-index:1}
+.contact-h{font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--white);letter-spacing:-.025em;line-height:1.25;margin-bottom:16px}
+.contact-desc{font-size:16px;color:rgba(255,255,255,.5);line-height:1.72;margin-bottom:36px}
+.cinfo{display:flex;flex-direction:column;gap:18px}
+.cinfo-item{display:flex;align-items:center;gap:14px;font-size:15px;color:rgba(255,255,255,.7)}
+.cinfo-item .ms{font-size:20px;color:var(--accent)}
+
+.form-card{background:var(--white);border-radius:var(--r-lg);padding:36px;position:relative;z-index:1}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:14px}
+.flabel{display:block;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;margin-bottom:7px}
+.finput{width:100%;padding:11px 15px;border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--font);font-size:15px;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none}
+.finput:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,154,68,.12)}
+.finput::placeholder{color:var(--dim)}
+textarea.finput{resize:vertical;min-height:96px;line-height:1.6}
+.fsubmit{width:100%;padding:15px;background:var(--accent);color:var(--white);border-radius:var(--r);font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px;border:none}
+.fsubmit:hover{background:var(--accent-dk);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,154,68,.3)}
+
+/* ─── FOOTER ─────────────────────────────────── */
+.footer{background:var(--navy);padding:60px 0 0}
+.av-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:transform .25s ease,box-shadow .25s ease}
+.av-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.av-icon{width:44px;height:44px;border-radius:var(--r-md);background:rgba(0,154,68,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.av-icon .ms{font-size:22px;color:var(--accent)}
+.av-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.av-body{font-size:15px;color:var(--muted);line-height:1.65}
+@media(max-width:1024px){#av-grid{grid-template-columns:repeat(2,1fr) !important}}
+@media(max-width:640px){#av-grid{grid-template-columns:1fr !important}}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.fb-name{font-size:20px;font-weight:800;color:var(--accent);letter-spacing:-.04em;margin-bottom:12px}
+.fb-desc{font-size:14px;color:rgba(255,255,255,.38);line-height:1.72;max-width:260px;margin-bottom:24px}
+.fb-socials{display:flex;gap:10px}
+.fb-soc{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:rgba(255,255,255,.4);transition:all .2s}
+.fb-soc:hover{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.fc-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.flinks{display:flex;flex-direction:column;gap:11px}
+.flink{font-size:14px;color:rgba(255,255,255,.45);transition:color .2s}
+.flink:hover{color:var(--white)}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.fc{font-size:12px;color:rgba(255,255,255,.28)}
+.flegal{display:flex;gap:10px;flex-wrap:wrap}
+.flbadge{padding:4px 10px;border:1px solid rgba(255,255,255,.1);border-radius:var(--r);font-size:10px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .method-inner{grid-template-columns:1fr;gap:48px}
+  .aes-inner{grid-template-columns:1fr;gap:48px}
+  .contact-card{grid-template-columns:1fr;gap:36px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .nav-ham{display:flex}
+  .bento{grid-template-columns:1fr}
+  .bc-mines,.bc-env,.bc-energy,.bc-validity{grid-column:1/-1}
+  .mines-inner{grid-template-columns:1fr}
+  .mines-img{width:100%;height:160px;min-height:unset}
+  .sentiers-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .aes-stats{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .trust-sep{display:none}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .aes-stats{grid-template-columns:1fr}
+}
+
+.ev-link{color:var(--accent) !important;font-weight:700 !important;position:relative}
+.ev-link::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:5px;vertical-align:middle;animation:evpulse 1.8s ease-out infinite}
+@keyframes evpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.ev-link.active::after{background:var(--accent)}
+.fasopot-credit{font-size:12px;color:rgba(255,255,255,.22);display:flex;align-items:center;gap:6px}
+.fasopot-credit a{color:rgba(255,255,255,.35);transition:color .2s}.fasopot-credit a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-brand">
+      <img class="nav-logo" src="assets/logo_cased.png" alt="Logo CASED">
+      <span class="nav-name">CASED</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a class="nav-link" href="expertise.html">Expertise</a>
+      <a class="nav-link" href="approche.html">Approche</a>
+      <a class="nav-link" href="a-propos.html">À Propos</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link ev-link" href="siieres-2026.html">SIIERES 2026</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Consultation</a>
+    <button class="nav-ham" id="ham-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-overlay" id="mob-overlay"></div>
+  <div class="mobile-drawer">
+    <button class="mobile-close" id="mob-close">✕</button>
+    <a class="mobile-link" href="#">Accueil</a>
+    <a class="mobile-link" href="expertise.html">Expertise</a>
+    <a class="mobile-link" href="approche.html">Notre Approche</a>
+    <a class="mobile-link" href="a-propos.html">À Propos</a>
+    <a class="mobile-link" href="#contact">Contact</a>
+    <a class="mobile-link" href="siieres-2026.html" style="color:var(--accent);font-weight:700">● SIIERES 2026</a>
+    <a class="btn btn-primary btn-lg" href="consultation.html" style="margin-top:16px;justify-content:center">Consultation</a>
+  </div>
+</div>
+
+<!-- ══ HERO ════════════════════════════════════ -->
+<section class="hero" id="accueil">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap hero-inner">
+    <!-- Left -->
+    <div>
+      <div class="hero-eyebrow">
+        <span class="badge badge-green">
+          <span class="ms" style="font-size:14px">verified_user</span>
+          Souveraineté &amp; Développement
+        </span>
+      </div>
+      <h1 class="hero-h1">
+        Ingénierie de la<br>
+        <span class="gold">Souveraineté Économique</span><br>
+        du Burkina Faso &amp; de l'AES
+      </h1>
+      <p class="hero-desc">
+        Cabinet Africain de Stratégie &amp; d'Expertise pour le Développement. Nous propulsons une vision endogène de la croissance, alliant rigueur technique et patriotisme stratégique pour transformer les potentiels nationaux en leviers de puissance souveraine.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#contact">
+          Démarrer un projet
+          <span class="ms" style="font-size:18px">trending_flat</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#methodologie">Notre Méthode</a>
+      </div>
+    </div>
+    <!-- Right — vision card -->
+    <div class="hero-card">
+      <p class="hero-quote">
+        "Nous ne sommes pas seulement des consultants — nous sommes les architectes d'une indépendance durable, au service des ambitions souveraines de l'Espace AES."
+      </p>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num">36 190,7</div>
+          <div class="hstat-label">Milliards FCFA<br>PND RELANCE 2026–2030</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">3</div>
+          <div class="hstat-label">Nations Unies<br>Confédération AES</div>
+        </div>
+        <div class="hstat span2">
+          <div class="icon"><span class="ms">analytics</span></div>
+          <div>
+            <div class="hstat-num">100%</div>
+            <div class="hstat-label">Engagement Endogène — Expertise Certifiée</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAND ══════════════════════════════ -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item">
+      <span class="ms ms-fill" style="font-size:15px;color:#2D5A27">check_circle</span>
+      Analyse Scientifique
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <span class="ms ms-fill" style="font-size:15px;color:#2D5A27">check_circle</span>
+      Secret Professionnel
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <span class="ms ms-fill" style="font-size:15px;color:#2D5A27">check_circle</span>
+      Expertise Certifiée
+    </div>
+    <div class="trust-sep"></div>
+    <span class="trust-legal">
+      <span class="ms" style="font-size:13px">verified</span>
+      RCCM : BJ-COO-01-2024-B13-00042 &nbsp;|&nbsp; IFU : 3202415487901
+    </span>
+  </div>
+</div>
+
+<!-- ══ SIIERES TEASER ════════════════════ -->
+<section style="background:var(--navy-deep);padding:0;overflow:hidden;position:relative">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,154,68,.18) 1px,transparent 1px);background-size:32px 32px;pointer-events:none"></div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:40%;background:radial-gradient(ellipse at right,rgba(200,16,46,.12) 0%,transparent 70%);pointer-events:none"></div>
+  <div class="wrap" style="position:relative;z-index:1;padding-top:56px;padding-bottom:56px">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center">
+      <div class="reveal">
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;background:rgba(200,16,46,.2);border:1px solid rgba(200,16,46,.35);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FF8A9B;margin-bottom:18px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#FF8A9B;display:inline-block;animation:evpulse 1.8s ease-out infinite"></span>
+          Événement CASED — 23–26 Juillet 2026
+        </div>
+        <div style="font-size:clamp(26px,3.5vw,42px);font-weight:900;color:var(--white);letter-spacing:-.04em;line-height:1.1;margin-bottom:12px">SIIERES <span style="color:var(--accent)">2026</span></div>
+        <div style="font-size:16px;color:rgba(255,255,255,.55);margin-bottom:24px;line-height:1.6;max-width:520px">« Des innovations structurelles, pour une Afrique résiliente et souveraine » &mdash; Ouagadougou, Burkina Faso</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="siieres-2026.html">Découvrir le Salon <span class="ms" style="font-size:18px">arrow_forward</span></a>
+          <a class="btn btn-ghost" href="siieres-2026.html#partenariat">Devenir Partenaire</a>
+        </div>
+      </div>
+      <div class="reveal d1" style="text-align:right">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:260px">
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:20px;text-align:center">
+            <div style="font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-.04em;line-height:1">4</div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:5px">Jours</div>
+          </div>
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:20px;text-align:center">
+            <div style="font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-.04em;line-height:1">6</div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-top:5px">Pôles</div>
+          </div>
+          <div style="grid-column:1/-1;background:rgba(0,154,68,.1);border:1px solid rgba(0,154,68,.2);border-radius:var(--r-lg);padding:16px;display:flex;align-items:center;gap:12px">
+            <img src="assets/logo_aes.webp" alt="AES" style="height:40px;width:auto;object-fit:contain;flex-shrink:0">
+            <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.6)">Confédération AES<br>Institution à l'honneur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.siieres-teaser-grid{grid-template-columns:1fr !important}}</style>
+
+<!-- ══ VISION QUOTE ════════════════════════════ -->
+<section class="vision section-y">
+  <div class="wrap reveal">
+    <span class="vision-label">Notre Engagement Institutionnel</span>
+    <p class="vision-text">
+      "Devenir le <span class="gold">partenaire d'ingénierie de référence</span> pour la transformation structurelle des économies de l'Espace AES."
+    </p>
+  </div>
+</section>
+
+<!-- ══ EXPERTISE BENTO ════════════════════════ -->
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="slabel">Piliers d'Expertise Stratégique</span>
+      <h2>Quatre domaines.<br>Une vision souveraine.</h2>
+      <div class="accentbar"></div>
+    </div>
+
+    <div class="bento">
+      <!-- Mines (large, 8 col) -->
+      <div class="bc bc-mines reveal">
+        <div class="mines-inner">
+          <div>
+            <div class="bcard-icon icon-navy"><span class="ms">precision_manufacturing</span></div>
+            <h3 class="bcard-title" style="color:var(--navy)">Mines &amp; Souveraineté Industrielle</h3>
+            <p class="bcard-body">Audit stratégique des concessions et structuration de chaînes de valeur locales pour capter la rente minérale. Nous accompagnons les États dans la sécurisation juridique et financière des ressources du sous-sol national.</p>
+            <a class="bcard-cta" href="#">
+              Explorer le secteur
+              <span class="ms" style="font-size:18px">arrow_forward</span>
+            </a>
+          </div>
+          <div class="img-ph mines-img" data-label="Souveraineté Minière"></div>
+        </div>
+      </div>
+
+      <!-- Environnement (4 col, green) -->
+      <div class="bc bc-env reveal d1">
+        <div class="bcard-icon icon-w20"><span class="ms">eco</span></div>
+        <h3 class="bcard-title">Environnement &amp; RSE Endogène</h3>
+        <p class="bcard-body-w">Développement durable ancré dans les réalités sahéliennes. Nous intégrons les savoirs endogènes aux standards internationaux pour une résilience durable et une souveraineté écologique.</p>
+        <a class="bcard-cta bcard-cta-w" href="#">
+          En savoir plus
+          <span class="ms" style="font-size:18px">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Énergie (4 col, navy) -->
+      <div class="bc bc-energy reveal">
+        <div class="bcard-icon icon-accent"><span class="ms">bolt</span></div>
+        <h3 class="bcard-title">Énergies &amp; Autonomie</h3>
+        <p class="bcard-body-w">Transition énergétique et déploiement de solutions solaires pour une indépendance réseau totale. Centrales, mini-grids, stockage et hydrogène vert au service du Sahel.</p>
+        <a class="bcard-cta bcard-cta-w" href="#">
+          Nos solutions
+          <span class="ms" style="font-size:18px">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Validité (8 col, white) -->
+      <div class="bc bc-validity reveal d1" style="display:flex;gap:40px;align-items:center">
+        <div style="flex:1">
+          <div class="bcard-icon icon-navy"><span class="ms">gavel</span></div>
+          <h3 class="bcard-title" style="color:var(--navy)">L'Art de la Validité</h3>
+          <p class="bcard-body">Sécurisation juridique et normative des grands projets d'infrastructure. Nous garantissons la conformité institutionnelle face aux standards internationaux tout en préservant l'intérêt national souverain.</p>
+          <div class="chips">
+            <span class="chip">Audit Juridique</span>
+            <span class="chip">Conformité ISO</span>
+            <span class="chip">Veille Réglementaire</span>
+          </div>
+        </div>
+        <div style="flex-shrink:0;opacity:.12">
+          <span class="ms" style="font-size:120px;color:var(--accent)">gavel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SENTIERS MAJEURS ════════════════════════ -->
+<section class="sentiers" id="sentiers">
+  <div class="wrap">
+    <div class="sentiers-head reveal">
+      <h2>Nos Sentiers Majeurs</h2>
+      <p>Axes stratégiques de déploiement pour la résilience de l'Espace AES</p>
+    </div>
+    <div class="sentiers-grid">
+      <div class="sitem reveal">
+        <div class="snum s-accent">Sentier 01</div>
+        <h3>Souveraineté Économique</h3>
+        <p>Modélisation de structures financières capables d'autofinancer le développement national et de mobiliser des ressources alternatives aux budgets souverains.</p>
+      </div>
+      <div class="sitem reveal d1">
+        <div class="snum s-green">Sentier 02</div>
+        <h3>Résilience Énergétique</h3>
+        <p>Infrastructures critiques pour une production d'énergie décentralisée, sécurisée et souveraine, réduisant la dépendance aux acteurs extérieurs.</p>
+      </div>
+      <div class="sitem reveal d2">
+        <div class="snum s-dim">Sentier 03</div>
+        <h3>Cadre Normatif Endogène</h3>
+        <p>Révision des cadres légaux pour favoriser les champions nationaux et établir des partenariats équitables alignés sur les intérêts de l'AES.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a class="btn btn-primary btn-lg" href="consultation.html">Initier une consultation <span class="ms" style="font-size:18px">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MÉTHODOLOGIE ════════════════════════════ -->
+<section class="method section-y" id="methodologie">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="slabel">Approche</span>
+      <h2>Notre Méthodologie de Rupture</h2>
+      <div class="accentbar"></div>
+    </div>
+    <div class="method-inner">
+      <div class="method-list">
+        <div class="mitem reveal">
+          <div class="micon"><span class="ms">groups</span></div>
+          <div>
+            <div class="mitem-title">Co-Construction</div>
+            <p class="mitem-body">Intégration des acteurs locaux dès la phase de conception pour garantir l'appropriation sociale et la légitimité des solutions déployées.</p>
+          </div>
+        </div>
+        <div class="mitem reveal d1">
+          <div class="micon"><span class="ms">account_balance</span></div>
+          <div>
+            <div class="mitem-title">Financement Innovant</div>
+            <p class="mitem-body">Mobilisation de ressources alternatives et optimisation des budgets souverains pour réduire la dépendance aux financements extérieurs.</p>
+          </div>
+        </div>
+        <div class="mitem reveal d2">
+          <div class="micon"><span class="ms">shield</span></div>
+          <div>
+            <div class="mitem-title">Patriotisme Technologique</div>
+            <p class="mitem-body">Priorité au transfert de compétences et à l'usage de technologies maîtrisables localement pour une autonomie technique durable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cycle reveal d1">
+        <div class="cycle-title">Cycle d'Expertise en 5 Étapes</div>
+        <div class="cycle-steps">
+          <div class="cstep">
+            <div class="cstep-num">1</div>
+            <div class="cstep-text">Diagnostic de Souveraineté</div>
+          </div>
+          <div class="cstep">
+            <div class="cstep-num">2</div>
+            <div class="cstep-text">Architecture Stratégique</div>
+          </div>
+          <div class="cstep">
+            <div class="cstep-num">3</div>
+            <div class="cstep-text">Modélisation Financière</div>
+          </div>
+          <div class="cstep">
+            <div class="cstep-num">4</div>
+            <div class="cstep-text">Sécurisation Normative</div>
+          </div>
+          <div class="cstep">
+            <div class="cstep-num">5</div>
+            <div class="cstep-text">Supervision de l'Impact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px" class="reveal">
+      <a class="btn btn-primary btn-lg" href="approche.html">Méthodologie complète <span class="ms" style="font-size:18px">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POURQUOI CASED ════════════════════ -->
+<section class="section-y" style="background:var(--white)" id="avantages">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="slabel">Pourquoi CASED</span>
+      <h2>Six raisons de nous choisir</h2>
+      <div class="accentbar"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)" id="av-grid">
+      <div class="av-card reveal">
+        <div class="av-icon"><span class="ms">location_city</span></div>
+        <div class="av-title">Connaissance Contextuelle</div>
+        <p class="av-body">Ancrés à Ouagadougou, nous parlons la langue institutionnelle locale et comprenons les dynamiques politiques et économiques du Burkina Faso en profondeur.</p>
+      </div>
+      <div class="av-card reveal d1">
+        <div class="av-icon"><span class="ms">flag</span></div>
+        <div class="av-title">Alignement RPP &amp; AES</div>
+        <p class="av-body">Nos recommandations sont calibrées sur la politique nationale souveraine et les orientations de la Révolution Progressiste Populaire du Capitaine Traoré.</p>
+      </div>
+      <div class="av-card reveal d2">
+        <div class="av-icon"><span class="ms">hub</span></div>
+        <div class="av-title">Expertise Multisectorielle</div>
+        <p class="av-body">4 domaines couverts — Mines, Environnement, Énergie, Juridique — pour une vision intégrée et des solutions transversales à haute valeur ajoutée.</p>
+      </div>
+      <div class="av-card reveal">
+        <div class="av-icon"><span class="ms">speed</span></div>
+        <div class="av-title">Cabinet Agile 2026</div>
+        <p class="av-body">Fondé en 2026, nous répondons rapidement sans bureaucratie. Notre agilité structurelle est un avantage dans les contextes d'urgence stratégique nationale.</p>
+      </div>
+      <div class="av-card reveal d1">
+        <div class="av-icon"><span class="ms">school</span></div>
+        <div class="av-title">Ingénierie Endogène</div>
+        <p class="av-body">Nos solutions privilégient le transfert de compétences locales et la maîtrise nationale des outils déployés, pour une autonomie technique durable.</p>
+      </div>
+      <div class="av-card reveal d2" style="background:var(--navy)">
+        <div class="av-icon" style="background:rgba(0,154,68,.2)"><span class="ms" style="color:var(--accent)">public</span></div>
+        <div class="av-title" style="color:var(--white)">Réseau AES</div>
+        <p class="av-body" style="color:rgba(255,255,255,.55)">Présence et compréhension de l'espace Mali-Burkina-Niger. Nous facilitons les synergies intracontinentales au sein de la Confédération des États du Sahel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AES CONTEXTE ════════════════════════════ -->
+<section class="aes section-y" id="aes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="slabel">Ancrage Stratégique</span>
+      <h2>Confédération AES &amp; PND RELANCE</h2>
+      <div class="accentbar"></div>
+    </div>
+    <div class="aes-inner">
+      <div class="reveal">
+        <p class="aes-body">Le CASED s'aligne sur les orientations stratégiques de la Confédération des États du Sahel (Mali-Burkina Faso-Niger) pour bâtir un pôle de prospérité autonome, ancré dans les réalités africaines contemporaines.</p>
+        <div class="pnd-card">
+          <div class="pnd-header">
+            <div class="pnd-bar"></div>
+            <div>
+              <div class="pnd-name">PND RELANCE 2026–2030</div>
+              <div class="pnd-value">Volume financier : 36 190,7 milliards FCFA</div>
+            </div>
+          </div>
+          <p class="pnd-quote">"Le développement de l'Afrique par les Africains n'est plus une option — c'est un impératif de sécurité nationale et de dignité souveraine."</p>
+          <div class="pnd-attr">
+            <span class="ms">person</span>
+            Capitaine Ibrahim Traoré — Révolution Progressiste Populaire
+          </div>
+        </div>
+      </div>
+      <div class="aes-stats reveal d1">
+        <div class="ast ast-navy">
+          <div class="ast-num">3</div>
+          <div class="ast-lbl">Nations Unies par l'AES</div>
+        </div>
+        <div class="ast ast-white">
+          <div class="ast-num">100%</div>
+          <div class="ast-lbl">Engagement Endogène</div>
+        </div>
+        <div class="ast ast-green">
+          <div class="ast-num">2026</div>
+          <div class="ast-lbl">Année de Fondation CASED</div>
+        </div>
+        <div class="ast ast-white">
+          <div class="ast-num">4</div>
+          <div class="ast-lbl">Domaines d'Expertise</div>
+        </div>
+        <div class="aes-map" style="flex-direction:row;gap:24px;padding:28px 32px">
+          <img src="assets/logo_aes.webp" alt="Logo Confédération AES" style="height:100px;width:auto;object-fit:contain">
+          <div style="text-align:left">
+            <div style="font-size:14px;font-weight:700;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">Confédération des États du Sahel</div>
+            <div style="font-size:15px;color:var(--muted);line-height:1.6">Mali — Burkina Faso — Niger<br>Architecture de l'Espace Sahel souverain</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="contact-left">
+        <span class="badge badge-accent" style="margin-bottom:20px">
+          <span class="ms" style="font-size:13px">hub</span>
+          Engagez le Cabinet
+        </span>
+        <h2 class="contact-h">Au service de la Révolution &amp; de la Souveraineté</h2>
+        <p class="contact-desc">Nos bureaux sont situés au cœur de Ouagadougou, prêts à accompagner les acteurs publics et privés dans leurs défis les plus complexes.</p>
+        <div class="cinfo">
+          <div class="cinfo-item">
+            <span class="ms">location_on</span>
+            BP 30162 Ouaga Pissy, Ouagadougou, Burkina Faso
+          </div>
+          <div class="cinfo-item">
+            <span class="ms">mail</span>
+            contact@cased-bf.com
+          </div>
+          <div class="cinfo-item">
+            <span class="ms">call</span>
+            +226 25 43 11 44 / 70 20 50 57
+          </div>
+          <div class="cinfo-item">
+            <span class="ms">language</span>
+            cased-bf.com
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-card">
+          <div class="form-row">
+            <div class="fg">
+              <label class="flabel">Nom Complet <span style="color:var(--accent)">*</span></label>
+              <input class="finput" type="text" placeholder="Jean-Luc Kaboré" required>
+            </div>
+            <div class="fg">
+              <label class="flabel">Organisation <span style="color:var(--accent)">*</span></label>
+              <input class="finput" type="text" placeholder="Ministère / Entreprise" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label class="flabel">Email Institutionnel <span style="color:var(--accent)">*</span></label>
+              <input class="finput" type="email" placeholder="email@domaine.bf" required>
+            </div>
+            <div class="fg">
+              <label class="flabel">Téléphone <span style="color:var(--accent)">*</span></label>
+              <input class="finput" type="tel" placeholder="+226 XX XX XX XX" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="flabel">Secteur d'Intervention</label>
+            <select class="finput">
+              <option value="">Sélectionnez un secteur…</option>
+              <option>Mines &amp; Souveraineté Industrielle</option>
+              <option>Environnement &amp; RSE</option>
+              <option>Énergies &amp; Autonomie</option>
+              <option>Art de la Validité</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="flabel">Votre Projet <span style="color:var(--accent)">*</span></label>
+            <textarea class="finput" placeholder="Décrivez les enjeux stratégiques de votre mission…" required></textarea>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:14px">
+            <input type="checkbox" id="rgpd" style="margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0;cursor:pointer">
+            <label for="rgpd" style="font-size:13px;color:var(--muted);cursor:pointer;line-height:1.5">
+              J'accepte la politique de confidentialité panafricaine du CASED et le traitement de mes données aux fins de réponse à ma demande.
+            </label>
+          </div>
+          <button class="fsubmit">Envoyer la demande</button>
+          <p style="font-size:12px;color:var(--dim);margin-top:12px;text-align:center">
+            <span style="color:var(--accent)">*</span> Champs obligatoires &mdash; Réponse sous 24h ouvrables
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="fb-name">CASED</div>
+        <p class="fb-desc">Cabinet Africain de Stratégie &amp; d'Expertise pour le Développement. Laboratoire d'idées souveraines et architecte des transformations majeures du continent.</p>
+        <div class="fb-socials">
+          <a class="fb-soc" href="#" aria-label="LinkedIn">in</a>
+          <a class="fb-soc" href="#" aria-label="Twitter / X">𝕏</a>
+          <a class="fb-soc" href="https://cased-bf.com" target="_blank" aria-label="Site web">
+            <span class="ms" style="font-size:16px;color:inherit">public</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Expertise</div>
+        <div class="flinks">
+          <a class="flink" href="expertise.html#mines">Mines &amp; Industrie</a>
+          <a class="flink" href="expertise.html#energies">Énergies AES</a>
+          <a class="flink" href="expertise.html#environnement">Environnement</a>
+          <a class="flink" href="expertise.html#validite">Cadre Normatif</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Cabinet</div>
+        <div class="flinks">
+          <a class="flink" href="a-propos.html">À Propos</a>
+          <a class="flink" href="approche.html">Notre Approche</a>
+          <a class="flink" href="#aes">Confédération AES</a>
+          <a class="flink" href="consultation.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title">Légal</div>
+        <div class="flinks">
+          <a class="flink" href="mentions-legales.html">Mentions Légales</a>
+          <a class="flink" href="mentions-legales.html#confidentialite">Confidentialité</a>
+          <a class="flink" href="#">Registre RCCM/IFU</a>
+        </div>
+        <div style="margin-top:24px">
+          <div style="font-size:11px;color:rgba(255,255,255,.25);line-height:2">
+            <div>RCCM : BJ-COO-01-2024-B13-00042</div>
+            <div>IFU : 3202415487901</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+            <div class="fasopot-credit">Design &amp; Digital by <a href="tel:+212777346787">FASOPOT DIGITAL</a> — +212 777 346 787</div>
+      <p class="fc">© 2026 CASED — Cabinet Africain de Stratégie &amp; d'Expertise pour le Développement. Tous droits réservés.</p>
+      <div class="flegal">
+        <span class="flbadge">Ouagadougou, Burkina Faso</span>
+        <span class="flbadge">AES — Espace Sahel</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Nav scroll ──────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, {passive: true});
+
+/* ── Mobile menu ─────────────────────────── */
+const hamBtn = document.getElementById('ham-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobClose = document.getElementById('mob-close');
+const mobOverlay = document.getElementById('mob-overlay');
+
+function openMenu(){mobileMenu.classList.add('open');document.body.style.overflow='hidden'}
+function closeMenu(){mobileMenu.classList.remove('open');document.body.style.overflow=''}
+hamBtn.addEventListener('click', openMenu);
+mobClose.addEventListener('click', closeMenu);
+mobOverlay.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('.mobile-link,.btn').forEach(l => l.addEventListener('click', closeMenu));
+
+/* ── Scroll reveal ───────────────────────── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('v');
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── Active nav link on scroll ───────────── */
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+      });
+    }
+  });
+}, {threshold: 0.4});
+sections.forEach(s => sectionObserver.observe(s));
+
+/* ── Form submit ─────────────────────────── */
+document.querySelector('.fsubmit').addEventListener('click', function(e){
+  e.preventDefault();
+  this.textContent = 'Demande envoyée ✓';
+  this.style.background = '#2D5A27';
+  setTimeout(() => {
+    this.textContent = 'Envoyer la demande';
+    this.style.background = '';
+  }, 3000);
+});
+</script>
+</body>
+</html>
