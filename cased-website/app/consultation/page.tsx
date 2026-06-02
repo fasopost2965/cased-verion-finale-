@@ -9,15 +9,36 @@ export default function ConsultationPage() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const rgpd = (form.querySelector('[name=rgpd]') as HTMLInputElement)?.checked;
     if (!rgpd) { alert('Veuillez accepter la politique de confidentialité pour continuer.'); return; }
-    const emailVal = (form.querySelector('[name=email]') as HTMLInputElement)?.value || '';
-    setEmail(emailVal);
+
+    const data = {
+      nom: (form.querySelector('[name=nom]') as HTMLInputElement)?.value || '',
+      organisation: (form.querySelector('[name=organisation]') as HTMLInputElement)?.value || '',
+      email: (form.querySelector('[name=email]') as HTMLInputElement)?.value || '',
+      telephone: (form.querySelector('[name=telephone]') as HTMLInputElement)?.value || '',
+      secteur: (form.querySelector('[name=secteur]') as HTMLSelectElement)?.value || '',
+      projet: (form.querySelector('[name=projet]') as HTMLTextAreaElement)?.value || '',
+    };
+
+    setEmail(data.email);
     setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmitted(true); }, 1800);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Erreur serveur');
+      setSubmitted(true);
+    } catch {
+      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@cased-bf.com');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -210,27 +231,27 @@ export default function ConsultationPage() {
                   <form onSubmit={handleSubmit} noValidate>
                     <div className="form-row">
                       <div className="fg">
-                        <label className="flabel">Nom Complet<span className="freq">*</span></label>
-                        <input className="finput" type="text" name="nom" placeholder="Jean-Luc Kaboré" required />
+                        <label className="flabel" htmlFor="c-nom">Nom Complet<span className="freq">*</span></label>
+                        <input id="c-nom" className="finput" type="text" name="nom" placeholder="Jean-Luc Kaboré" required />
                       </div>
                       <div className="fg">
-                        <label className="flabel">Organisation / Ministère<span className="freq">*</span></label>
-                        <input className="finput" type="text" name="organisation" placeholder="Ministère du Plan" required />
+                        <label className="flabel" htmlFor="c-org">Organisation / Ministère<span className="freq">*</span></label>
+                        <input id="c-org" className="finput" type="text" name="organisation" placeholder="Ministère du Plan" required />
                       </div>
                     </div>
                     <div className="form-row">
                       <div className="fg">
-                        <label className="flabel">Email Professionnel<span className="freq">*</span></label>
-                        <input className="finput" type="email" name="email" placeholder="j.dupont@institution.gov" required onChange={e => setEmail(e.target.value)} />
+                        <label className="flabel" htmlFor="c-email">Email Professionnel<span className="freq">*</span></label>
+                        <input id="c-email" className="finput" type="email" name="email" placeholder="j.dupont@institution.gov" required onChange={e => setEmail(e.target.value)} />
                       </div>
                       <div className="fg">
-                        <label className="flabel">Téléphone<span className="freq">*</span></label>
-                        <input className="finput" type="tel" name="telephone" placeholder="+226 XX XX XX XX" required />
+                        <label className="flabel" htmlFor="c-tel">Téléphone<span className="freq">*</span></label>
+                        <input id="c-tel" className="finput" type="tel" name="telephone" placeholder="+226 XX XX XX XX" required />
                       </div>
                     </div>
                     <div className="fg">
-                      <label className="flabel">Secteur d&apos;Intervention<span className="freq">*</span></label>
-                      <select className="finput" name="secteur" required>
+                      <label className="flabel" htmlFor="c-secteur">Secteur d&apos;Intervention<span className="freq">*</span></label>
+                      <select id="c-secteur" className="finput" name="secteur" required>
                         <option value="">Sélectionnez votre secteur…</option>
                         <option>Mines &amp; Souveraineté Industrielle</option>
                         <option>Environnement &amp; RSE Endogène</option>
@@ -243,8 +264,8 @@ export default function ConsultationPage() {
                       </select>
                     </div>
                     <div className="fg">
-                      <label className="flabel">Description Synthétique du Projet<span className="freq">*</span></label>
-                      <textarea className="finput" name="projet" placeholder="Quels sont les enjeux stratégiques de votre sollicitation ? Décrivez le contexte, les objectifs et les défis principaux de votre mission…" required />
+                      <label className="flabel" htmlFor="c-projet">Description Synthétique du Projet<span className="freq">*</span></label>
+                      <textarea id="c-projet" className="finput" name="projet" placeholder="Quels sont les enjeux stratégiques de votre sollicitation ? Décrivez le contexte, les objectifs et les défis principaux de votre mission…" required />
                     </div>
                     <div className="checkbox-row">
                       <input type="checkbox" id="rgpd" name="rgpd" required />

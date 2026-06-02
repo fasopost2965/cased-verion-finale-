@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://cased-bf.com' },
+  metadataBase: new URL('https://cased-bf.com'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
